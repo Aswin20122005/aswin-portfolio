@@ -510,9 +510,16 @@ export default function Portfolio() {
         .social-link { width: 44px; height: 44px; border-radius: 14px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; color: #7a6e96; transition: all 0.3s; cursor: pointer; text-decoration: none; }
         .social-link:hover { background: rgba(139,92,246,0.15); border-color: rgba(139,92,246,0.3); color: #c4b5ff; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(139,92,246,0.15); }
         .hamburger { display: none; }
+        .hero-grid { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 60px; max-width: 1100px; margin: 0 auto; width: 100%; }
+        .hero-photo { display: flex; justify-content: center; }
         @media (max-width: 768px) {
           .hamburger { display: flex; }
           .desktop-nav { display: none !important; }
+          .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; text-align: center; }
+          .hero-grid > div:last-child { order: -1; }
+          .hero-photo > div { width: 200px !important; height: 240px !important; }
+          .hero-btns { justify-content: center !important; }
+          .hero-socials { justify-content: center !important; }
         }
       `}</style>
 
@@ -555,7 +562,7 @@ export default function Portfolio() {
           <div style={{ position: "absolute", top: "10%", right: "10%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%)", animation: "pulse 6s ease-in-out infinite", pointerEvents: "none" }} />
           <div style={{ position: "absolute", bottom: "15%", left: "5%", width: 300, height: 300, borderRadius: "50%", background: "radial-gradient(circle, rgba(6,214,160,0.08) 0%, transparent 70%)", animation: "pulse 8s ease-in-out 2s infinite", pointerEvents: "none" }} />
 
-          <div style={{ maxWidth: 1100, margin: "0 auto", width: "100%", display: "grid", gridTemplateColumns: "1fr auto", alignItems: "center", gap: 60 }}>
+          <div className="hero-grid">
             <div style={{ animation: "fadeUp 0.8s ease-out" }}>
               <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 14, color: "#06d6a0", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
                 <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#06d6a0", display: "inline-block", animation: "pulse 2s infinite" }} />
@@ -571,13 +578,13 @@ export default function Portfolio() {
               <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 15, color: "#5a5080", lineHeight: 1.8, maxWidth: 500, marginBottom: 36 }}>
                 B.Tech CSE @ SRM IST · Building scalable solutions across Cloud, Security, ML & IoT. Published researcher with hands-on industry experience.
               </p>
-              <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <div className="hero-btns" style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
                 <button className="btn-primary" onClick={() => scrollTo("projects")}><Eye size={16} /> View Projects</button>
                 <button className="btn-ghost" onClick={() => scrollTo("contact")}><Send size={16} /> Contact Me</button>
                 <button className="btn-ghost" onClick={downloadResume}><Download size={16} /> Resume</button>
               </div>
 
-              <div style={{ display: "flex", gap: 12, marginTop: 32 }}>
+              <div className="hero-socials" style={{ display: "flex", gap: 12, marginTop: 32 }}>
                 <a href="https://github.com/Aswin20122005" target="_blank" rel="noopener" className="social-link"><Github size={18} /></a>
                 <a href="https://www.linkedin.com/in/aswin-s-53abbb2a8" target="_blank" rel="noopener" className="social-link"><Linkedin size={18} /></a>
                 <a href="mailto:ashwin.20.achu@gmail.com" className="social-link"><Mail size={18} /></a>
@@ -585,8 +592,7 @@ export default function Portfolio() {
               </div>
             </div>
 
-            {/* Profile Photo */}
-            <div style={{ display: "flex", justifyContent: "center", animation: "fadeUp 1s ease-out 0.3s both" }}>
+            <div className="hero-photo" style={{ animation: "fadeUp 1s ease-out 0.3s both" }}>
               <div style={{
                 width: 300, height: 360, borderRadius: 24, position: "relative",
                 background: "linear-gradient(135deg, #8b5cf6, #06d6a0)",
