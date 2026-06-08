@@ -360,15 +360,18 @@ function ProjectCard({ project, index }) {
 }
 
 // ============ EXTRACTED COMPONENTS (hooks can't go in .map) ============
-function StatBox({ stat, started }) {
-  const val = useCounter(stat.value, 2000, started, stat.decimal);
+function StatBox({ stat }) {
+  const [ref, vis] = useInView(0.2);
+  const val = useCounter(stat.value, 2000, vis, stat.decimal);
   return (
-    <GlassCard style={{ padding: "24px 20px", textAlign: "center" }}>
-      <div style={{ fontFamily: "'Syne', sans-serif", fontSize: 36, fontWeight: 800, background: "linear-gradient(135deg, #8b5cf6, #06d6a0)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-        {val}{stat.suffix}
-      </div>
-      <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13, color: "#6b5eab", marginTop: 4 }}>{stat.label}</div>
-    </GlassCard>
+    <div ref={ref}>
+      <GlassCard style={{ padding: "24px 20px", textAlign: "center" }}>
+        <div style={{ fontFamily: "'Syne', sans-serif", fontSize: 36, fontWeight: 800, background: "linear-gradient(135deg, #8b5cf6, #06d6a0)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+          {val}{stat.suffix}
+        </div>
+        <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13, color: "#6b5eab", marginTop: 4 }}>{stat.label}</div>
+      </GlassCard>
+    </div>
   );
 }
 
@@ -439,10 +442,8 @@ export default function Portfolio() {
   const [scrollY, setScrollY] = useState(0);
   const [activeNav, setActiveNav] = useState("home");
   const [projectFilter, setProjectFilter] = useState("all");
-  const [statsRef, statsVis] = useInView(0.2);
   const [skillsRef, skillsVis] = useInView(0.15);
 
-  // statValues moved into StatBox component
 
   useEffect(() => {
     const onScroll = () => setScrollY(window.scrollY);
@@ -633,7 +634,7 @@ export default function Portfolio() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 28, marginTop: 36 }}>
             <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 15, color: "#8a7ea0", lineHeight: 1.85 }}>
               <p style={{ marginBottom: 16 }}>
-                I'm a 4th-year Computer Science student at SRM IST with a drive for cloud infrastructure, DevOps, security, and data analytics. I've interned at Vectra Technosoft working on enterprise Linux systems and operations.
+                I'm a 3rd-year Computer Science student at SRM IST with a drive for cloud infrastructure, DevOps, security, and data analytics. I've interned at Vectra Technosoft working on enterprise Linux systems and operations.
               </p>
               <p style={{ marginBottom: 16 }}>
                 My project portfolio spans IoT hardware to ML models — from spacecraft anomaly detection to voice-activated SOS systems. I've published 2 research papers in Springer and presented at international conferences.
@@ -644,9 +645,9 @@ export default function Portfolio() {
             </div>
 
             {/* Stats */}
-            <div ref={statsRef} style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
               {STATS.map((s) => (
-                <StatBox key={s.label} stat={s} started={statsVis} />
+                <StatBox key={s.label} stat={s} />
               ))}
             </div>
           </div>
