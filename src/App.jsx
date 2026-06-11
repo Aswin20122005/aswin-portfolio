@@ -634,7 +634,7 @@ export default function Portfolio() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 28, marginTop: 36 }}>
             <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 15, color: "#8a7ea0", lineHeight: 1.85 }}>
               <p style={{ marginBottom: 16 }}>
-                I'm a 3rd-year Computer Science student at SRM IST with a drive for cloud infrastructure, DevOps, security, and data analytics. I've interned at Vectra Technosoft working on enterprise Linux systems and operations.
+                I'm a 4th-year Computer Science student at SRM IST with a drive for cloud infrastructure, DevOps, security, and data analytics. I've interned at Vectra Technosoft working on enterprise Linux systems and operations.
               </p>
               <p style={{ marginBottom: 16 }}>
                 My project portfolio spans IoT hardware to ML models — from spacecraft anomaly detection to voice-activated SOS systems. I've published 2 research papers in Springer and presented at international conferences.
