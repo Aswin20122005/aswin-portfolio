@@ -37,7 +37,8 @@ const SKILL_CATEGORIES = [
   { name: "Tools", icon: Terminal, skills: [{ n: "VS Code", l: 90 }, { n: "Power BI", l: 72 }, { n: "Postman", l: 70 }, { n: "MS Office", l: 85 }] },
 ];
 
-const CERTS = [
+const CERTS = [ 
+  { title: "AWS Certified Cloud Practitioner certification", org: "AWS", color: "#44ef8b" },
   { title: "RHCSA", org: "Red Hat", id: "250-048-659", color: "#ef4444" },
   { title: "SAP Certified Data Analyst", org: "SAP Analytics Cloud", color: "#3b82f6" },
   { title: "Intro to Machine Learning", org: "NPTEL", color: "#8b5cf6" },
@@ -51,14 +52,14 @@ const TIMELINE = [
   { year: "Jun 2025", title: "Intern — System Operations", place: "Vectra Technosoft Pvt. Ltd.", desc: "Enterprise Linux, system stability, downtime reduction, technical support.", type: "work" },
   { year: "2025", title: "Published — VoiSOS (Springer)", place: "DoSCI-2025 International Conference", desc: "Voice-activated SOS system using Flutter — IET Lucknow, University of Delhi, University of Calabria.", type: "pub" },
   { year: "2026", title: "Published — QKD-PQC Protocol", place: "EPJ Web of Conferences (Springer)", desc: "Hybrid quantum-secure communication framework at QUICK'26 conference.", type: "pub" },
-  { year: "2023–27", title: "B.Tech CSE", place: "SRM IST, Kattankulathur", desc: "Computer Science & Engineering — CGPA: 8.6/10", type: "edu" },
+  { year: "2023–27", title: "B.Tech CSE", place: "SRM IST, Kattankulathur", desc: "Computer Science & Engineering — CGPA: 8.72/10", type: "edu" },
 ];
 
 const STATS = [
   { label: "Projects Built", value: 11, suffix: "+" },
   { label: "Publications", value: 2, suffix: "" },
-  { label: "Certifications", value: 7, suffix: "" },
-  { label: "CGPA", value: 8.6, suffix: "", decimal: true },
+  { label: "Certifications", value: 8, suffix: "" },
+  { label: "CGPA", value: 8.72, suffix: "", decimal: true },
 ];
 
 // ============ HOOKS ============
