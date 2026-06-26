@@ -641,7 +641,7 @@ export default function Portfolio() {
                 My project portfolio spans IoT hardware to ML models — from spacecraft anomaly detection to voice-activated SOS systems. I've published 2 research papers in Springer and presented at international conferences.
               </p>
               <p>
-                I'm RHCSA and SAP certified, and always exploring new technologies across the full stack. I love solving problems that sit at the intersection of hardware, software, and data.
+                I'm RHCSA, AWS and SAP certified, and always exploring new technologies across the full stack. I love solving problems that sit at the intersection of hardware, software, and data.
               </p>
             </div>
 
