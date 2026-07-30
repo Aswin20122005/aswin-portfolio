@@ -26,6 +26,7 @@ const PROJECTS = [
   { id: 9, title: "Real-Time Crypto Price Tracker", desc: "Live cryptocurrency price tracker fetching real-time data from APIs with dynamic charts, alerts, and portfolio monitoring.", tags: ["JavaScript", "React", "API", "Chart.js"], cat: "web", color: "#22d3ee", icon: "📈" },
   { id: 10, title: "Air Canvas", desc: "Draw in the air using hand gestures! Uses OpenCV and MediaPipe to track fingertip movements and render drawings on a virtual canvas.", tags: ["Python", "OpenCV", "MediaPipe", "CV"], cat: "ml", color: "#a78bfa", icon: "🎨" },
   { id: 11, title: "Student Attendance via Face Recognition", desc: "Automated attendance system using face recognition to identify students in real-time, logging attendance with timestamps.", tags: ["Python", "OpenCV", "face_recognition", "SQL"], cat: "ml", color: "#34d399", icon: "📸" },
+  { id: 12, title: "FlowMind — AI-Powered Workflow Automation Engine", desc: "Full-stack Spring Boot workflow automation engine — 7 configurable step types, 12 REST APIs, async execution engine, smart suggestion insights, live dashboard, Docker + CI/CD.", tags: ["Java 23", "Spring Boot", "JPA", "REST API", "Docker"], cat: "web", color: "#fbbf24", icon: "⚙️" },
 ];
 
 const SKILL_CATEGORIES = [
@@ -39,6 +40,7 @@ const SKILL_CATEGORIES = [
 
 const CERTS = [ 
   { title: "AWS Certified Cloud Practitioner certification", org: "AWS", color: "#44ef8b" },
+  { title: "AWS Certified AI Practitioner", org: "AWS", color: "#44ef8b" },
   { title: "RHCSA", org: "Red Hat", id: "250-048-659", color: "#ef4444" },
   { title: "SAP Certified Data Analyst", org: "SAP Analytics Cloud", color: "#3b82f6" },
   { title: "Intro to Machine Learning", org: "NPTEL", color: "#8b5cf6" },
@@ -49,14 +51,15 @@ const CERTS = [
 ];
 
 const TIMELINE = [
-  { year: "Jun 2025", title: "Intern — System Operations", place: "Vectra Technosoft Pvt. Ltd.", desc: "Enterprise Linux, system stability, downtime reduction, technical support.", type: "work" },
+  { year: "Jun 2026 – Nov 2026", title: "Linux System Administration Intern", place: "Autointelli Systems Pvt. Ltd.", desc: "Working under the CTO on Linux system administration for AI/ML-focused projects at an automation-technology company, gaining hands-on exposure to production Linux environments supporting AI and ML workloads.", type: "work" },
+  { year: "Jun 2025", title: "Technical Support Engineer Intern (Linux)", place: "Vectra Technosoft Pvt. Ltd.", desc: "Enterprise Linux, system stability, downtime reduction, technical support.", type: "work" },
   { year: "2025", title: "Published — VoiSOS (Springer)", place: "DoSCI-2025 International Conference", desc: "Voice-activated SOS system using Flutter — IET Lucknow, University of Delhi, University of Calabria.", type: "pub" },
   { year: "2026", title: "Published — QKD-PQC Protocol", place: "EPJ Web of Conferences (Springer)", desc: "Hybrid quantum-secure communication framework at QUICK'26 conference.", type: "pub" },
   { year: "2023–27", title: "B.Tech CSE", place: "SRM IST, Kattankulathur", desc: "Computer Science & Engineering — CGPA: 8.72/10", type: "edu" },
 ];
 
 const STATS = [
-  { label: "Projects Built", value: 11, suffix: "+" },
+  { label: "Projects Built", value: 12, suffix: "+" },
   { label: "Publications", value: 2, suffix: "" },
   { label: "Certifications", value: 8, suffix: "" },
   { label: "CGPA", value: 8.72, suffix: "", decimal: true },
