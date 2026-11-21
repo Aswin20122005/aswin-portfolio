@@ -1,4 +1,3 @@
-import { Cloud } from "lucide-react";
 
 export const ROLES = [
   "Cloud & DevOps Enthusiast",

@@ -1,4 +1,3 @@
-import { Cloud } from "lucide-react";
 
 export const CERTS = [
   { title: "AWS Certified Cloud Practitioner", org: "AWS", color: "#44ef8b" },

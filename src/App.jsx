@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { ChevronDown, Cloud, Download, Eye, Github, Instagram, Linkedin, Mail, MapPin, Menu, Phone, Send, X } from "lucide-react";
+import { ChevronDown, Download, Eye, Github, Instagram, Linkedin, Mail, MapPin, Menu, Phone, Send, X } from "lucide-react";
 import { AnimatedSection } from "./components/AnimatedSection";
 import { CertItem } from "./components/CertItem";
 import { CursorGlow } from "./components/CursorGlow";
