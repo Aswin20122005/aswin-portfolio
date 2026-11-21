@@ -53,6 +53,11 @@ const CERTS = [
   { title: "Full-Stack Web Dev", org: "Udemy", color: "#a855f7" },
 ];
 
+const PUBLICATIONS = [
+  { title: "VoiSOS: Voice-based SOS System Using Flutter", pub: "Springer · DoSCI-2025", desc: "Voice-activated emergency alert system — IET Lucknow, University of Delhi, University of Calabria, Italy.", color: "#ef4444" },
+  { title: "QKD-PQC Protocol for Secure Communication", pub: "EPJ Web of Conferences (Springer) · QUICK'26", desc: "Hybrid quantum-secure framework integrating QKD with Post-Quantum Cryptography against quantum threats.", color: "#8b5cf6" },
+];
+
 const TIMELINE = [
   { year: "Jun 2026 – Nov 2026", title: "Linux System Administration Intern", place: "Autointelli Systems Pvt. Ltd.", desc: "Working under the CTO on Linux system administration for AI/ML-focused projects at an automation-technology company, gaining hands-on exposure to production Linux environments supporting AI and ML workloads.", type: "work" },
   { year: "Jun 2025", title: "Technical Support Engineer Intern (Linux)", place: "Vectra Technosoft Pvt. Ltd.", desc: "Enterprise Linux, system stability, downtime reduction, technical support.", type: "work" },
@@ -62,9 +67,9 @@ const TIMELINE = [
 ];
 
 const STATS = [
-  { label: "Projects Built", value: 12, suffix: "+" },
-  { label: "Publications", value: 2, suffix: "" },
-  { label: "Certifications", value: 10, suffix: "" },
+  { label: "Projects Built", value: PROJECTS.length, suffix: "+" },
+  { label: "Publications", value: PUBLICATIONS.length, suffix: "" },
+  { label: "Certifications", value: CERTS.length, suffix: "" },
   { label: "CGPA", value: 8.72, suffix: "", decimal: true },
 ];
 
@@ -768,10 +773,7 @@ export default function Portfolio() {
           {/* Publications */}
           <div style={{ marginTop: 56 }}>
             <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: 24, fontWeight: 700, color: "#f0e6ff", marginBottom: 24 }}>Publications</h3>
-            {[
-              { title: "VoiSOS: Voice-based SOS System Using Flutter", pub: "Springer · DoSCI-2025", desc: "Voice-activated emergency alert system — IET Lucknow, University of Delhi, University of Calabria, Italy.", color: "#ef4444" },
-              { title: "QKD-PQC Protocol for Secure Communication", pub: "EPJ Web of Conferences (Springer) · QUICK'26", desc: "Hybrid quantum-secure framework integrating QKD with Post-Quantum Cryptography against quantum threats.", color: "#8b5cf6" },
-            ].map((pub, i) => (
+            {PUBLICATIONS.map((pub, i) => (
               <PubItem key={pub.title} pub={pub} index={i} />
             ))}
           </div>
