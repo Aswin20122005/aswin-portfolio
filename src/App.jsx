@@ -213,16 +213,21 @@ function CursorGlow() {
 }
 
 function ScrollProgress() {
-  const [progress, setProgress] = useState(0);
+  const barRef = useRef(null);
   useEffect(() => {
-    const onScroll = () => {
+    let ticking = false;
+    const update = () => {
+      ticking = false;
       const h = document.documentElement.scrollHeight - window.innerHeight;
-      setProgress(h > 0 ? (window.scrollY / h) * 100 : 0);
+      if (barRef.current) barRef.current.style.transform = `scaleX(${h > 0 ? window.scrollY / h : 0})`;
     };
+    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    update();
+    return () => { window.removeEventListener("scroll", onScroll); window.removeEventListener("resize", onScroll); };
   }, []);
-  return <div style={{ position: "fixed", top: 0, left: 0, height: 3, width: `${progress}%`, background: "linear-gradient(90deg, #8b5cf6, #06d6a0)", zIndex: 200, transition: "width 0.1s linear" }} />;
+  return <div ref={barRef} aria-hidden="true" style={{ position: "fixed", top: 0, left: 0, height: 3, width: "100%", transform: "scaleX(0)", transformOrigin: "0 50%", background: "linear-gradient(90deg, #8b5cf6, #06d6a0)", zIndex: 200 }} />;
 }
 
 function Typewriter({ words, speed = 100, pause = 2000 }) {
