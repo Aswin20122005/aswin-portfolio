@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Award, Briefcase, ChevronDown, Cloud, Download, ExternalLink, Eye, Github, GraduationCap, Instagram, Linkedin, Mail, MapPin, Menu, Phone, Send, Star, X } from "lucide-react";
+import { CursorGlow } from "./components/CursorGlow";
 import { Particles } from "./components/Particles";
 import { PROFILE_PHOTO, PROFILE_PHOTO_FALLBACK, RESUME_URL } from "./data/assets";
 import { CERTS } from "./data/certifications";
@@ -14,21 +15,6 @@ import { useInView } from "./hooks/useInView";
 import { useMediaQuery } from "./hooks/useMediaQuery";
 
 // ============ COMPONENTS ============
-
-function CursorGlow() {
-  const glowRef = useRef(null);
-  useEffect(() => {
-    const move = (e) => {
-      if (glowRef.current) {
-        glowRef.current.style.left = e.clientX + "px";
-        glowRef.current.style.top = e.clientY + "px";
-      }
-    };
-    window.addEventListener("mousemove", move);
-    return () => window.removeEventListener("mousemove", move);
-  }, []);
-  return <div ref={glowRef} style={{ position: "fixed", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(139,92,246,0.06) 0%, transparent 70%)", pointerEvents: "none", zIndex: 1, transform: "translate(-50%,-50%)", transition: "left 0.1s ease-out, top 0.1s ease-out" }} />;
-}
 
 function ScrollProgress() {
   const barRef = useRef(null);
