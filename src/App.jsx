@@ -304,7 +304,7 @@ function LoadingScreen({ onDone }) {
       <div style={{ width: 200, height: 3, background: "rgba(139,92,246,0.15)", borderRadius: 10, overflow: "hidden" }}>
         <div style={{ height: "100%", width: `${Math.min(progress, 100)}%`, background: "linear-gradient(90deg, #8b5cf6, #06d6a0)", borderRadius: 10, transition: "width 0.1s" }} />
       </div>
-      <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 12, color: "#6b5eab", marginTop: 16, letterSpacing: 3 }}>
+      <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 12, color: "#8f84b8", marginTop: 16, letterSpacing: 3 }}>
         LOADING...
       </div>
     </div>
@@ -418,7 +418,7 @@ function StatBox({ stat }) {
         <div style={{ fontFamily: "'Syne', sans-serif", fontSize: 36, fontWeight: 800, background: "linear-gradient(135deg, #8b5cf6, #06d6a0)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
           {val}{stat.suffix}
         </div>
-        <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13, color: "#6b5eab", marginTop: 4 }}>{stat.label}</div>
+        <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13, color: "#8f84b8", marginTop: 4 }}>{stat.label}</div>
       </GlassCard>
     </div>
   );
@@ -446,7 +446,7 @@ function TimelineItem({ item, index }) {
           <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#06d6a0", background: "rgba(6,214,160,0.1)", padding: "3px 10px", borderRadius: 20 }}>{item.year}</span>
         </div>
         <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13, color: "#8b5cf6", marginBottom: 4 }}>{item.place}</div>
-        <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13.5, color: "#7a6e96", lineHeight: 1.6 }}>{item.desc}</div>
+        <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13.5, color: "#8a7ea0", lineHeight: 1.6 }}>{item.desc}</div>
       </GlassCard>
     </div>
   );
@@ -478,7 +478,7 @@ function PubItem({ pub, index }) {
       <GlassCard style={{ padding: "24px 28px", borderLeft: `3px solid ${pub.color}` }} hover={true}>
         <div style={{ fontFamily: "'Syne', sans-serif", fontSize: 16, fontWeight: 700, color: "#f0e6ff", lineHeight: 1.35, marginBottom: 6 }}>{pub.title}</div>
         <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#06d6a0", marginBottom: 8 }}>{pub.pub}</div>
-        <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13.5, color: "#7a6e96", lineHeight: 1.6 }}>{pub.desc}</div>
+        <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13.5, color: "#8a7ea0", lineHeight: 1.6 }}>{pub.desc}</div>
       </GlassCard>
     </div>
   );
@@ -550,19 +550,19 @@ export default function Portfolio() {
         @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        .nav-item { font-family: 'Outfit', sans-serif; font-size: 14px; color: #6b5eab; background: none; border: none; padding: 8px 16px; cursor: pointer; transition: all 0.3s; border-radius: 30px; text-transform: capitalize; font-weight: 500; letter-spacing: 0.5px; }
+        .nav-item { font-family: 'Outfit', sans-serif; font-size: 14px; color: #8f84b8; background: none; border: none; padding: 8px 16px; cursor: pointer; transition: all 0.3s; border-radius: 30px; text-transform: capitalize; font-weight: 500; letter-spacing: 0.5px; }
         .nav-item:hover, .nav-item.active { color: #c4b5ff; background: rgba(139,92,246,0.1); }
         .section-tag { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8b5cf6; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
         .section-tag::before { content: ''; width: 24px; height: 1px; background: #8b5cf6; }
         .section-heading { font-family: 'Syne', sans-serif; font-size: clamp(28px, 5vw, 48px); font-weight: 800; color: #f0e6ff; line-height: 1.15; margin-bottom: 16px; }
-        .section-sub { font-family: 'Outfit', sans-serif; font-size: 16px; color: #7a6e96; line-height: 1.7; max-width: 560px; }
+        .section-sub { font-family: 'Outfit', sans-serif; font-size: 16px; color: #8a7ea0; line-height: 1.7; max-width: 560px; }
         .btn-primary { font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: #fff; border: none; padding: 12px 28px; border-radius: 50px; cursor: pointer; transition: all 0.35s; display: inline-flex; align-items: center; gap: 8px; }
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(139,92,246,0.4), 0 0 50px rgba(139,92,246,0.15); }
         .btn-ghost { font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 500; background: transparent; color: #c4b5ff; border: 1px solid rgba(139,92,246,0.3); padding: 12px 28px; border-radius: 50px; cursor: pointer; transition: all 0.35s; display: inline-flex; align-items: center; gap: 8px; }
         .btn-ghost:hover { background: rgba(139,92,246,0.1); border-color: #8b5cf6; transform: translateY(-2px); }
-        .filter-btn { font-family: 'Outfit', sans-serif; font-size: 13px; background: rgba(255,255,255,0.03); color: #7a6e96; border: 1px solid rgba(255,255,255,0.06); padding: 8px 20px; border-radius: 30px; cursor: pointer; transition: all 0.3s; font-weight: 500; }
+        .filter-btn { font-family: 'Outfit', sans-serif; font-size: 13px; background: rgba(255,255,255,0.03); color: #8a7ea0; border: 1px solid rgba(255,255,255,0.06); padding: 8px 20px; border-radius: 30px; cursor: pointer; transition: all 0.3s; font-weight: 500; }
         .filter-btn:hover, .filter-btn.active { background: rgba(139,92,246,0.15); color: #c4b5ff; border-color: rgba(139,92,246,0.3); }
-        .social-link { width: 44px; height: 44px; border-radius: 14px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; color: #7a6e96; transition: all 0.3s; cursor: pointer; text-decoration: none; }
+        .social-link { width: 44px; height: 44px; border-radius: 14px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; color: #8a7ea0; transition: all 0.3s; cursor: pointer; text-decoration: none; }
         .social-link:hover { background: rgba(139,92,246,0.15); border-color: rgba(139,92,246,0.3); color: #c4b5ff; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(139,92,246,0.15); }
         .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
         .skip-link { position: fixed; top: -60px; left: 16px; z-index: 300; background: #8b5cf6; color: #fff; padding: 10px 18px; border-radius: 10px; font-family: 'Outfit', sans-serif; font-size: 14px; text-decoration: none; transition: top 0.2s; }
@@ -635,13 +635,13 @@ export default function Portfolio() {
                 Available for opportunities
               </div>
               <h1 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(36px, 6vw, 64px)", fontWeight: 800, lineHeight: 1.1, marginBottom: 8 }}>
-                <span style={{ color: "#7a6e96" }}>Hi, I'm</span><br />
+                <span style={{ color: "#8a7ea0" }}>Hi, I'm</span><br />
                 <span style={{ background: "linear-gradient(135deg, #8b5cf6, #06d6a0, #f472b6)", backgroundSize: "200% 200%", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", animation: "gradientShift 4s ease infinite" }}>Aswin</span>
               </h1>
-              <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: "clamp(18px, 3vw, 24px)", color: "#7a6e96", marginBottom: 24, minHeight: 36 }}>
+              <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: "clamp(18px, 3vw, 24px)", color: "#8a7ea0", marginBottom: 24, minHeight: 36 }}>
                 <Typewriter words={ROLES} speed={80} pause={1800} />
               </div>
-              <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 15, color: "#5a5080", lineHeight: 1.8, maxWidth: 500, marginBottom: 36 }}>
+              <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 15, color: "#8a7ea0", lineHeight: 1.8, maxWidth: 500, marginBottom: 36 }}>
                 B.Tech CSE @ SRM IST · Building scalable solutions across Cloud, Security, ML & IoT. Published researcher with hands-on industry experience.
               </p>
               <div className="hero-btns" style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
@@ -690,7 +690,7 @@ export default function Portfolio() {
             </div>
           </div>
 
-          <div onClick={() => scrollTo("about")} style={{ position: "absolute", bottom: 40, left: "50%", transform: "translateX(-50%)", cursor: "pointer", animation: "float 3s ease-in-out infinite", color: "#6b5eab" }}>
+          <div onClick={() => scrollTo("about")} style={{ position: "absolute", bottom: 40, left: "50%", transform: "translateX(-50%)", cursor: "pointer", animation: "float 3s ease-in-out infinite", color: "#8f84b8" }}>
             <ChevronDown size={28} />
           </div>
         </section>
@@ -838,7 +838,7 @@ export default function Portfolio() {
         <footer style={{
           textAlign: "center", padding: "28px 32px",
           borderTop: "1px solid rgba(139,92,246,0.08)",
-          fontFamily: "'Outfit', sans-serif", fontSize: 13, color: "#3d3660",
+          fontFamily: "'Outfit', sans-serif", fontSize: 13, color: "#8a7ea0",
         }}>
           <span style={{ color: "#8b5cf6" }}>{"<"}</span> Built by Aswin <span style={{ color: "#06d6a0" }}>{"/>"}</span> · © {new Date().getFullYear()}
         </footer>
