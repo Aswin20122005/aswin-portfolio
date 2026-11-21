@@ -6,7 +6,7 @@ export function useCounter(end, duration = 2000, start = false, decimal = false)
     if (!start) return;
     let startTime = null;
     const step = (ts) => {
-      if (!startTime) startTime = ts;
+      if (startTime === null) startTime = ts;
       const p = Math.min((ts - startTime) / duration, 1);
       const eased = 1 - Math.pow(1 - p, 3);
       setVal(decimal ? parseFloat((eased * end).toFixed(1)) : Math.floor(eased * end));
