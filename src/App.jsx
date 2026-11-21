@@ -10,20 +10,7 @@ import { STATS } from "./data/stats";
 import { TIMELINE } from "./data/timeline";
 import { useCounter } from "./hooks/useCounter";
 import { useInView } from "./hooks/useInView";
-
-// ============ HOOKS ============
-
-function useMediaQuery(query) {
-  const [matches, setMatches] = useState(() => typeof window !== "undefined" && window.matchMedia(query).matches);
-  useEffect(() => {
-    const mq = window.matchMedia(query);
-    const onChange = () => setMatches(mq.matches);
-    onChange();
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
-  }, [query]);
-  return matches;
-}
+import { useMediaQuery } from "./hooks/useMediaQuery";
 
 // ============ COMPONENTS ============
 function Particles({ count = 50 }) {
