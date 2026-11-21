@@ -260,7 +260,10 @@ function Typewriter({ words, speed = 100, pause = 2000 }) {
 
   return (
     <span>
-      {text}<span style={{ animation: "blink 1s step-end infinite", color: "#8b5cf6", fontWeight: 300 }}>|</span>
+      <span className="sr-only">{words.join(", ")}</span>
+      <span aria-hidden="true">
+        {text}<span style={{ animation: "blink 1s step-end infinite", color: "#8b5cf6", fontWeight: 300 }}>|</span>
+      </span>
     </span>
   );
 }
@@ -561,6 +564,7 @@ export default function Portfolio() {
         .filter-btn:hover, .filter-btn.active { background: rgba(139,92,246,0.15); color: #c4b5ff; border-color: rgba(139,92,246,0.3); }
         .social-link { width: 44px; height: 44px; border-radius: 14px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; color: #7a6e96; transition: all 0.3s; cursor: pointer; text-decoration: none; }
         .social-link:hover { background: rgba(139,92,246,0.15); border-color: rgba(139,92,246,0.3); color: #c4b5ff; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(139,92,246,0.15); }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
         .skip-link { position: fixed; top: -60px; left: 16px; z-index: 300; background: #8b5cf6; color: #fff; padding: 10px 18px; border-radius: 10px; font-family: 'Outfit', sans-serif; font-size: 14px; text-decoration: none; transition: top 0.2s; }
         .skip-link:focus { top: 12px; }
         button:focus-visible, a:focus-visible { outline: 2px solid #06d6a0; outline-offset: 3px; }
