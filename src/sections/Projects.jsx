@@ -29,6 +29,7 @@ export function Projects() {
             key={k}
             className={`filter-btn ${projectFilter === k ? "active" : ""}`}
             onClick={() => setProjectFilter(k)}
+            aria-pressed={projectFilter === k}
           >
             {v}
           </button>

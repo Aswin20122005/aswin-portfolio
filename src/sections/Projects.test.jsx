@@ -20,6 +20,8 @@ describe("Projects section", () => {
     await userEvent.click(screen.getByRole("button", { name: label }));
     expect(cardTitles()).toHaveLength(PROJECTS.filter((p) => p.cat === cat).length);
     expect(screen.getByRole("button", { name: label })).toHaveClass("active");
+    expect(screen.getByRole("button", { name: label })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByRole("button", { name: "All" })).toHaveAttribute("aria-pressed", "false");
   });
 
   it("returns to all projects when All is clicked", async () => {
