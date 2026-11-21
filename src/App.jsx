@@ -259,15 +259,23 @@ function LoadingScreen({ onDone }) {
   const [progress, setProgress] = useState(0);
   const [fade, setFade] = useState(false);
 
+  const done = progress >= 100;
+
   useEffect(() => {
+    if (done) return;
     const interval = setInterval(() => {
-      setProgress(p => {
-        if (p >= 100) { clearInterval(interval); setTimeout(() => setFade(true), 300); setTimeout(onDone, 800); return 100; }
-        return p + Math.random() * 8 + 2;
-      });
+      setProgress(p => Math.min(100, p + Math.random() * 8 + 2));
     }, 60);
     return () => clearInterval(interval);
-  }, [onDone]);
+  }, [done]);
+
+  // Side effects belong in an effect, not inside the setState updater
+  useEffect(() => {
+    if (!done) return;
+    const fadeT = setTimeout(() => setFade(true), 300);
+    const doneT = setTimeout(onDone, 800);
+    return () => { clearTimeout(fadeT); clearTimeout(doneT); };
+  }, [done, onDone]);
 
   return (
     <div style={{
