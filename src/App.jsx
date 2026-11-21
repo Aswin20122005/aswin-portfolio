@@ -5,18 +5,17 @@ import { CertItem } from "./components/CertItem";
 import { CursorGlow } from "./components/CursorGlow";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { Particles } from "./components/Particles";
-import { ProjectCard } from "./components/ProjectCard";
 import { PubItem } from "./components/PubItem";
 import { ScrollProgress } from "./components/ScrollProgress";
 import { SocialLinks } from "./components/SocialLinks";
 import { CERTS } from "./data/certifications";
 import { CONTACT_INFO } from "./data/contact";
 import { NAV_SECTIONS } from "./data/navigation";
-import { PROJECTS } from "./data/projects";
 import { PUBLICATIONS } from "./data/publications";
 import { useMediaQuery } from "./hooks/useMediaQuery";
 import { About } from "./sections/About";
 import { Hero } from "./sections/Hero";
+import { Projects } from "./sections/Projects";
 import { Skills } from "./sections/Skills";
 
 // ============ MAIN COMPONENT ============
@@ -25,7 +24,6 @@ export default function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeNav, setActiveNav] = useState("home");
-  const [projectFilter, setProjectFilter] = useState("all");
   const reducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
   const hasFinePointer = useMediaQuery("(hover: hover) and (pointer: fine)");
 
@@ -62,7 +60,6 @@ export default function Portfolio() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const filteredProjects = projectFilter === "all" ? PROJECTS : PROJECTS.filter(p => p.cat === projectFilter);
 
   const finishLoading = useCallback(() => setLoaded(true), []);
 
@@ -110,19 +107,7 @@ export default function Portfolio() {
 
         <Skills />
 
-        {/* ===== PROJECTS ===== */}
-        <AnimatedSection id="projects" style={{ padding: "100px 32px", maxWidth: 1100, margin: "0 auto" }}>
-          <div className="section-tag">Projects</div>
-          <h2 className="section-heading">Things I've<br /><span style={{ color: "#f472b6" }}>built.</span></h2>
-          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 36 }}>
-            {[["all", "All"], ["ml", "ML & AI"], ["iot", "IoT"], ["web", "Web"], ["app", "Apps"], ["security", "Security"]].map(([k, v]) => (
-              <button key={k} className={`filter-btn ${projectFilter === k ? "active" : ""}`} onClick={() => setProjectFilter(k)}>{v}</button>
-            ))}
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))", gap: 20 }}>
-            {filteredProjects.map((p, i) => <ProjectCard key={p.id} project={p} index={i} />)}
-          </div>
-        </AnimatedSection>
+        <Projects />
 
         {/* ===== ACHIEVEMENTS ===== */}
         <AnimatedSection id="achievements" style={{ padding: "100px 32px", maxWidth: 1100, margin: "0 auto" }}>
