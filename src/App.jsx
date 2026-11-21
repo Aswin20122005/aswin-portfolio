@@ -8,26 +8,10 @@ import { ROLES } from "./data/roles";
 import { SKILL_CATEGORIES } from "./data/skills";
 import { STATS } from "./data/stats";
 import { TIMELINE } from "./data/timeline";
+import { useCounter } from "./hooks/useCounter";
 import { useInView } from "./hooks/useInView";
 
 // ============ HOOKS ============
-
-function useCounter(end, duration = 2000, start = false, decimal = false) {
-  const [val, setVal] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    let startTime = null;
-    const step = (ts) => {
-      if (!startTime) startTime = ts;
-      const p = Math.min((ts - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 3);
-      setVal(decimal ? parseFloat((eased * end).toFixed(1)) : Math.floor(eased * end));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, end, duration, decimal]);
-  return val;
-}
 
 function useMediaQuery(query) {
   const [matches, setMatches] = useState(() => typeof window !== "undefined" && window.matchMedia(query).matches);
