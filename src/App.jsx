@@ -17,6 +17,7 @@ import { Typewriter } from "./components/Typewriter";
 import { PROFILE_PHOTO, PROFILE_PHOTO_FALLBACK, RESUME_URL } from "./data/assets";
 import { CERTS } from "./data/certifications";
 import { CONTACT_INFO } from "./data/contact";
+import { NAV_SECTIONS } from "./data/navigation";
 import { PROJECTS } from "./data/projects";
 import { PUBLICATIONS } from "./data/publications";
 import { ROLES } from "./data/roles";
@@ -37,16 +38,14 @@ export default function Portfolio() {
   const reducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
   const hasFinePointer = useMediaQuery("(hover: hover) and (pointer: fine)");
 
-
   // One rAF-throttled scroll listener. Only boolean/section changes trigger a
   // re-render, instead of re-rendering the whole page on every scroll event.
   useEffect(() => {
-    const sections = ["home", "about", "skills", "projects", "achievements", "contact"];
     let ticking = false;
     const update = () => {
       ticking = false;
       setScrolled(window.scrollY > 60);
-      for (const s of [...sections].reverse()) {
+      for (const s of [...NAV_SECTIONS].reverse()) {
         const el = document.getElementById(s);
         if (el && el.getBoundingClientRect().top < 300) { setActiveNav(s); break; }
       }
@@ -73,7 +72,6 @@ export default function Portfolio() {
   };
 
   const filteredProjects = projectFilter === "all" ? PROJECTS : PROJECTS.filter(p => p.cat === projectFilter);
-  const NAV = ["home", "about", "skills", "projects", "achievements", "contact"];
 
   const finishLoading = useCallback(() => setLoaded(true), []);
 
@@ -99,7 +97,7 @@ export default function Portfolio() {
           <span style={{ color: "#8b5cf6" }}>{"<"}</span><span style={{ color: "#e2e0ff" }}>Aswin</span><span style={{ color: "#06d6a0" }}>{" />"}</span>
         </div>
         <div className="desktop-nav" style={{ display: "flex", gap: 4 }}>
-          {NAV.map(n => <button key={n} className={`nav-item ${activeNav === n ? "active" : ""}`} onClick={() => scrollTo(n)}>{n}</button>)}
+          {NAV_SECTIONS.map(n => <button key={n} className={`nav-item ${activeNav === n ? "active" : ""}`} onClick={() => scrollTo(n)}>{n}</button>)}
         </div>
         <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} style={{ background: "none", border: "none", color: "#e2e0ff", cursor: "pointer", zIndex: 200, padding: 8 }}>
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -109,7 +107,7 @@ export default function Portfolio() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(6,6,17,0.97)", backdropFilter: "blur(30px)", zIndex: 99, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 20 }}>
-          {NAV.map(n => <button key={n} className="nav-item" style={{ fontSize: 22 }} onClick={() => scrollTo(n)}>{n}</button>)}
+          {NAV_SECTIONS.map(n => <button key={n} className="nav-item" style={{ fontSize: 22 }} onClick={() => scrollTo(n)}>{n}</button>)}
         </div>
       )}
 
