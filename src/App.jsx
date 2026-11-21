@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { ChevronDown } from "lucide-react";
+import { BackToTop } from "./components/BackToTop";
 import { CursorGlow } from "./components/CursorGlow";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { Particles } from "./components/Particles";
@@ -61,7 +61,6 @@ export default function Portfolio() {
       <Navbar scrolled={scrolled} activeNav={activeNav} menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollTo={scrollTo} />
 
       <main id="main" style={{ position: "relative", zIndex: 2 }}>
-
         <Hero scrollTo={scrollTo} />
 
         <About />
@@ -73,16 +72,10 @@ export default function Portfolio() {
         <Achievements />
 
         <Contact />
-
-        {scrolled && (
-          <button onClick={() => scrollTo("home")} aria-label="Back to top" className="back-to-top">
-            <ChevronDown size={20} style={{ transform: "rotate(180deg)" }} />
-          </button>
-        )}
-
-        <Footer />
-
       </main>
+
+      <Footer />
+      <BackToTop visible={scrolled} onClick={() => scrollTo("home")} />
     </>
   );
 }
