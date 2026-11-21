@@ -104,8 +104,9 @@ export const PROJECTS = [
   {
     id: 12,
     title: "FlowMind — AI-Powered Workflow Automation Engine",
+    repo: "https://github.com/Aswin20122005/workflow-engine",
     desc: "Full-stack Spring Boot workflow automation engine with 7 configurable step types and 12 REST APIs, featuring async execution, a smart suggestion engine, live dashboard, and Docker + CI/CD pipeline.",
-    tags: ["Java 23", "Spring Boot", "JPA", "REST API", "Docker"],
+    tags: ["Java 21", "Spring Boot", "JPA", "REST API", "Docker"],
     cat: "web",
     color: "#fbbf24",
     icon: "⚙️",
@@ -113,6 +114,7 @@ export const PROJECTS = [
   {
     id: 13,
     title: "3D+Time Cell-Tracking ML Pipeline (Kaggle Biohub)",
+    repo: "https://github.com/Aswin20122005/cell-tracking-3d",
     desc: "End-to-end ML pipeline tracking zebrafish cells across 3D microscopy volumes, evolving from a blob-detection baseline to a trained 3D U-Net that lifted the leaderboard score over 11% (0.782 → 0.872).",
     tags: ["Python", "PyTorch", "3D U-Net", "NumPy", "Data Pipelines"],
     cat: "ml",
