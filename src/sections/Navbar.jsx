@@ -11,7 +11,7 @@ export function Navbar({ scrolled, activeNav, menuOpen, setMenuOpen, scrollTo })
     const onKey = (e) => { if (e.key === "Escape") setMenuOpen(false); };
     window.addEventListener("keydown", onKey);
     return () => { document.body.style.overflow = prev; window.removeEventListener("keydown", onKey); };
-  }, [menuOpen]);
+  }, [menuOpen, setMenuOpen]);
 
   return (
     <>
