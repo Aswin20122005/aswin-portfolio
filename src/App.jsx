@@ -1,19 +1,16 @@
 import { useState, useEffect, useCallback } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { AnimatedSection } from "./components/AnimatedSection";
-import { CertItem } from "./components/CertItem";
 import { CursorGlow } from "./components/CursorGlow";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { Particles } from "./components/Particles";
-import { PubItem } from "./components/PubItem";
 import { ScrollProgress } from "./components/ScrollProgress";
 import { SocialLinks } from "./components/SocialLinks";
-import { CERTS } from "./data/certifications";
 import { CONTACT_INFO } from "./data/contact";
 import { NAV_SECTIONS } from "./data/navigation";
-import { PUBLICATIONS } from "./data/publications";
 import { useMediaQuery } from "./hooks/useMediaQuery";
 import { About } from "./sections/About";
+import { Achievements } from "./sections/Achievements";
 import { Hero } from "./sections/Hero";
 import { Projects } from "./sections/Projects";
 import { Skills } from "./sections/Skills";
@@ -109,24 +106,7 @@ export default function Portfolio() {
 
         <Projects />
 
-        {/* ===== ACHIEVEMENTS ===== */}
-        <AnimatedSection id="achievements" style={{ padding: "100px 32px", maxWidth: 1100, margin: "0 auto" }}>
-          <div className="section-tag">Achievements</div>
-          <h2 className="section-heading">Certifications &<br /><span style={{ color: "#fbbf24" }}>credentials.</span></h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16, marginTop: 32 }}>
-            {CERTS.map((c, i) => (
-              <CertItem key={c.title} cert={c} index={i} />
-            ))}
-          </div>
-
-          {/* Publications */}
-          <div style={{ marginTop: 56 }}>
-            <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: 24, fontWeight: 700, color: "#f0e6ff", marginBottom: 24 }}>Publications</h3>
-            {PUBLICATIONS.map((pub, i) => (
-              <PubItem key={pub.title} pub={pub} index={i} />
-            ))}
-          </div>
-        </AnimatedSection>
+        <Achievements />
 
         {/* ===== CONTACT ===== */}
         <AnimatedSection id="contact" style={{ padding: "100px 32px 60px", maxWidth: 1100, margin: "0 auto" }}>
