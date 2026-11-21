@@ -8,6 +8,7 @@ import { Particles } from "./components/Particles";
 import { ProjectCard } from "./components/ProjectCard";
 import { ScrollProgress } from "./components/ScrollProgress";
 import { SkillBar } from "./components/SkillBar";
+import { StatBox } from "./components/StatBox";
 import { Typewriter } from "./components/Typewriter";
 import { PROFILE_PHOTO, PROFILE_PHOTO_FALLBACK, RESUME_URL } from "./data/assets";
 import { CERTS } from "./data/certifications";
@@ -17,25 +18,10 @@ import { ROLES } from "./data/roles";
 import { SKILL_CATEGORIES } from "./data/skills";
 import { STATS } from "./data/stats";
 import { TIMELINE } from "./data/timeline";
-import { useCounter } from "./hooks/useCounter";
 import { useInView } from "./hooks/useInView";
 import { useMediaQuery } from "./hooks/useMediaQuery";
 
 // ============ EXTRACTED COMPONENTS (hooks can't go in .map) ============
-function StatBox({ stat }) {
-  const [ref, vis] = useInView(0.2);
-  const val = useCounter(stat.value, 2000, vis, stat.decimal);
-  return (
-    <div ref={ref}>
-      <GlassCard style={{ padding: "24px 20px", textAlign: "center" }}>
-        <div style={{ fontFamily: "'Syne', sans-serif", fontSize: 36, fontWeight: 800, background: "linear-gradient(135deg, #8b5cf6, #06d6a0)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-          {val}{stat.suffix}
-        </div>
-        <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13, color: "#8f84b8", marginTop: 4 }}>{stat.label}</div>
-      </GlassCard>
-    </div>
-  );
-}
 
 function TimelineItem({ item, index }) {
   const [ref, vis] = useInView(0.2);
