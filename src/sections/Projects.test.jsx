@@ -15,6 +15,7 @@ describe("Projects section", () => {
     ["IoT", "iot"],
     ["Web", "web"],
     ["ML & AI", "ml"],
+    ["Data", "data"],
   ])("filters to %s projects", async (label, cat) => {
     render(<Projects />);
     await userEvent.click(screen.getByRole("button", { name: label }));

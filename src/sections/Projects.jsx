@@ -24,6 +24,7 @@ export function Projects() {
           ["web", "Web"],
           ["app", "Apps"],
           ["security", "Security"],
+          ["data", "Data"],
         ].map(([k, v]) => (
           <button
             key={k}

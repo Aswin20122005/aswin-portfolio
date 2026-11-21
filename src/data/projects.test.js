@@ -1,6 +1,6 @@
 import { PROJECTS } from "./projects";
 
-const CATEGORIES = ["ml", "iot", "web", "app", "security"];
+const CATEGORIES = ["ml", "iot", "web", "app", "security", "data"];
 
 describe("PROJECTS data", () => {
   it("has unique ids", () => {

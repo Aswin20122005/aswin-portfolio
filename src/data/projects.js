@@ -141,4 +141,14 @@ export const PROJECTS = [
     color: "#38bdf8",
     icon: "🚀",
   },
+  {
+    id: 16,
+    title: "Revenue Drop Investigation (SQL + pandas)",
+    repo: "https://github.com/Aswin20122005/revenue-drop-analysis",
+    desc: "Answered whether a 37% month-on-month revenue drop was real or a data problem: rule-based cleaning with a quarantine log, SQLite KPIs, a worst-case sensitivity check, and automated verification of every number in the executive summary.",
+    tags: ["Python", "pandas", "SQL", "SQLite", "pytest"],
+    cat: "data",
+    color: "#facc15",
+    icon: "📉",
+  },
 ];
