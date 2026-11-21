@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { ChevronDown, Download, Eye, Github, Instagram, Linkedin, Mail, Menu, Send, X } from "lucide-react";
+import { ChevronDown, Download, Eye, Menu, Send, X } from "lucide-react";
 import { AnimatedSection } from "./components/AnimatedSection";
 import { CertItem } from "./components/CertItem";
 import { CursorGlow } from "./components/CursorGlow";
@@ -10,6 +10,7 @@ import { ProjectCard } from "./components/ProjectCard";
 import { PubItem } from "./components/PubItem";
 import { ScrollProgress } from "./components/ScrollProgress";
 import { SkillBar } from "./components/SkillBar";
+import { SocialLinks } from "./components/SocialLinks";
 import { StatBox } from "./components/StatBox";
 import { TimelineItem } from "./components/TimelineItem";
 import { Typewriter } from "./components/Typewriter";
@@ -142,12 +143,7 @@ export default function Portfolio() {
                 <a className="btn-ghost" href={RESUME_URL} download="Aswin_Resume.pdf" style={{ textDecoration: "none" }}><Download size={16} /> Resume</a>
               </div>
 
-              <div className="hero-socials" style={{ display: "flex", gap: 12, marginTop: 32 }}>
-                <a href="https://github.com/Aswin20122005" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub profile"><Github size={18} /></a>
-                <a href="https://www.linkedin.com/in/aswin-s-53abbb2a8" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn profile"><Linkedin size={18} /></a>
-                <a href="mailto:ashwin.20.achu@gmail.com" className="social-link" aria-label="Send an email"><Mail size={18} /></a>
-                <a href="https://www.instagram.com/__ashw1n.20_?igsh=MWs0b25hZm5sNjZuaA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram profile"><Instagram size={18} /></a>
-              </div>
+              <SocialLinks className="hero-socials" style={{ marginTop: 32 }} />
             </div>
 
             <div className="hero-photo" style={{ animation: "fadeUp 1s ease-out 0.3s both" }}>
@@ -305,12 +301,7 @@ export default function Portfolio() {
                   </div>
                 ))}
               </div>
-              <div style={{ display: "flex", gap: 10, marginTop: 28 }}>
-                <a href="https://github.com/Aswin20122005" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub profile"><Github size={18} /></a>
-                <a href="https://www.linkedin.com/in/aswin-s-53abbb2a8" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn profile"><Linkedin size={18} /></a>
-                <a href="mailto:ashwin.20.achu@gmail.com" className="social-link" aria-label="Send an email"><Mail size={18} /></a>
-                <a href="https://www.instagram.com/__ashw1n.20_?igsh=MWs0b25hZm5sNjZuaA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram profile"><Instagram size={18} /></a>
-              </div>
+              <SocialLinks gap={10} style={{ marginTop: 28 }} />
             </div>
 
           </div>
