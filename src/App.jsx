@@ -1,10 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { Github, Linkedin, Mail, Instagram, ExternalLink, Download, ChevronDown, Menu, X, Award, Briefcase, GraduationCap, Code, Database, Cloud, Brain, Terminal, Globe, Send, MapPin, Phone, Star, Eye } from "lucide-react";
+import { Award, Brain, Briefcase, ChevronDown, Cloud, Code, Database, Download, ExternalLink, Eye, Github, Globe, GraduationCap, Instagram, Linkedin, Mail, MapPin, Menu, Phone, Send, Star, Terminal, X } from "lucide-react";
+import { PROFILE_PHOTO, PROFILE_PHOTO_FALLBACK, RESUME_URL } from "./data/assets";
 
 // ============ DATA ============
-const PROFILE_PHOTO = "/profile.webp";
-const PROFILE_PHOTO_FALLBACK = "/profile.jpg";
-const RESUME_URL = "/Aswin_Resume.pdf";
 
 const ROLES = [
   "Cloud & DevOps Enthusiast",
