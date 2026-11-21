@@ -28,7 +28,8 @@ A dark-themed personal portfolio built with React: glassmorphism cards, an inter
 | Effects | Canvas particle system, CSS animations, IntersectionObserver |
 | Build | Create React App (react-scripts 5) |
 | Hosting | Vercel (caching + security headers in `vercel.json`) |
-| CI | GitHub Actions: production build on every push |
+| Quality | ESLint, Prettier, Jest + React Testing Library |
+| CI | GitHub Actions: format check, tests and production build on every push |
 
 ## Project structure
 
@@ -41,7 +42,12 @@ aswin-portfolio/
 │   ├── og-image.png        # link preview image
 │   ├── favicon.svg, manifest.json, robots.txt, sitemap.xml
 ├── src/
-│   ├── App.jsx             # all sections, components and content data
+│   ├── App.jsx             # page layout and scroll tracking
+│   ├── sections/           # Navbar, Hero, About, Skills, Projects, Achievements, Contact, Footer
+│   ├── components/         # reusable UI: GlassCard, ProjectCard, Typewriter, Particles…
+│   ├── hooks/              # useInView, useCounter, useMediaQuery
+│   ├── data/               # all portfolio content (projects, skills, certs, contact…)
+│   ├── styles/global.css   # global styles and animations
 │   └── index.js
 ├── docs/                   # README screenshots
 ├── .github/workflows/      # CI build
@@ -60,12 +66,23 @@ npm start        # http://localhost:3000
 npm run build    # production build in build/
 ```
 
+## Quality checks
+
+```bash
+npm test             # tests in watch mode
+npm run test:ci      # single run with coverage report
+npm run format       # format code with Prettier
+npm run format:check # check formatting
+```
+
+The test suite (React Testing Library + Jest) covers the data files, the custom hooks, every component and section, and an app-level smoke test. GitHub Actions runs formatting, tests and a production build on every push.
+
 ## Updating content
 
-All content lives in the data arrays at the top of `src/App.jsx`:
+All content lives in `src/data/`:
 
-- `PROJECTS`: add `repo: "https://github.com/..."` to show a **View code** link
-- `CERTS`, `PUBLICATIONS`, `TIMELINE`, `SKILL_CATEGORIES`, `ROLES`
+- `projects.js`: add `repo: "https://github.com/..."` to show a **View code** link
+- `certifications.js`, `publications.js`, `timeline.js`, `skills.js`, `roles.js`, `contact.js`
 
 The stats counters (projects, publications, certifications) are calculated from these arrays automatically.
 
