@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aswin-portfolio-eosin.vercel.app/sitemap.xml
