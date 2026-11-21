@@ -79,55 +79,6 @@ export default function Portfolio() {
 
   return (
     <>
-      <style>{`
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { background: #060611; color: #e2e0ff; overflow-x: hidden; }
-        @keyframes blink { 50% { opacity: 0; } }
-        @keyframes float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(3deg); } }
-        @keyframes pulse { 0%, 100% { opacity: 0.4; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.05); } }
-        @keyframes slideIn { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        .nav-item { font-family: 'Outfit', sans-serif; font-size: 14px; color: #8f84b8; background: none; border: none; padding: 8px 16px; cursor: pointer; transition: all 0.3s; border-radius: 30px; text-transform: capitalize; font-weight: 500; letter-spacing: 0.5px; }
-        .nav-item:hover, .nav-item.active { color: #c4b5ff; background: rgba(139,92,246,0.1); }
-        .section-tag { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8b5cf6; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-        .section-tag::before { content: ''; width: 24px; height: 1px; background: #8b5cf6; }
-        .section-heading { font-family: 'Syne', sans-serif; font-size: clamp(28px, 5vw, 48px); font-weight: 800; color: #f0e6ff; line-height: 1.15; margin-bottom: 16px; }
-        .section-sub { font-family: 'Outfit', sans-serif; font-size: 16px; color: #8a7ea0; line-height: 1.7; max-width: 560px; }
-        .btn-primary { font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: #fff; border: none; padding: 12px 28px; border-radius: 50px; cursor: pointer; transition: all 0.35s; display: inline-flex; align-items: center; gap: 8px; }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(139,92,246,0.4), 0 0 50px rgba(139,92,246,0.15); }
-        .btn-ghost { font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 500; background: transparent; color: #c4b5ff; border: 1px solid rgba(139,92,246,0.3); padding: 12px 28px; border-radius: 50px; cursor: pointer; transition: all 0.35s; display: inline-flex; align-items: center; gap: 8px; }
-        .btn-ghost:hover { background: rgba(139,92,246,0.1); border-color: #8b5cf6; transform: translateY(-2px); }
-        .filter-btn { font-family: 'Outfit', sans-serif; font-size: 13px; background: rgba(255,255,255,0.03); color: #8a7ea0; border: 1px solid rgba(255,255,255,0.06); padding: 8px 20px; border-radius: 30px; cursor: pointer; transition: all 0.3s; font-weight: 500; }
-        .filter-btn:hover, .filter-btn.active { background: rgba(139,92,246,0.15); color: #c4b5ff; border-color: rgba(139,92,246,0.3); }
-        .social-link { width: 44px; height: 44px; border-radius: 14px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; color: #8a7ea0; transition: all 0.3s; cursor: pointer; text-decoration: none; }
-        .social-link:hover { background: rgba(139,92,246,0.15); border-color: rgba(139,92,246,0.3); color: #c4b5ff; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(139,92,246,0.15); }
-        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-        .skip-link { position: fixed; top: -60px; left: 16px; z-index: 300; background: #8b5cf6; color: #fff; padding: 10px 18px; border-radius: 10px; font-family: 'Outfit', sans-serif; font-size: 14px; text-decoration: none; transition: top 0.2s; }
-        .skip-link:focus { top: 12px; }
-        button:focus-visible, a:focus-visible { outline: 2px solid #06d6a0; outline-offset: 3px; }
-        .back-to-top { position: fixed; right: 24px; bottom: 24px; z-index: 90; width: 44px; height: 44px; border-radius: 14px; border: 1px solid rgba(139,92,246,0.3); background: rgba(6,6,17,0.8); backdrop-filter: blur(12px); color: #c4b5ff; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s; animation: fadeUp 0.4s ease-out; }
-        .back-to-top:hover { background: rgba(139,92,246,0.2); transform: translateY(-3px); }
-        .hamburger { display: none; }
-        .hero-grid { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 60px; max-width: 1100px; margin: 0 auto; width: 100%; }
-        .hero-photo { display: flex; justify-content: center; }
-        @media (prefers-reduced-motion: reduce) {
-          html { scroll-behavior: auto; }
-          *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
-        }
-        @media (max-width: 768px) {
-          .hamburger { display: flex; }
-          .desktop-nav { display: none !important; }
-          .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; text-align: center; }
-          .hero-grid > div:last-child { order: -1; }
-          .hero-photo > div { width: 200px !important; height: 240px !important; }
-          .hero-btns { justify-content: center !important; }
-          .hero-socials { justify-content: center !important; }
-        }
-      `}</style>
-
       <a href="#main" className="skip-link">Skip to content</a>
       {!reducedMotion && <Particles count={hasFinePointer ? 45 : 20} />}
       {!reducedMotion && hasFinePointer && <CursorGlow />}
