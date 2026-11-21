@@ -463,6 +463,7 @@ export default function Portfolio() {
   const [projectFilter, setProjectFilter] = useState("all");
   const [skillsRef, skillsVis] = useInView(0.15);
   const reducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
+  const hasFinePointer = useMediaQuery("(hover: hover) and (pointer: fine)");
 
 
   useEffect(() => {
@@ -552,8 +553,8 @@ export default function Portfolio() {
       `}</style>
 
       <a href="#main" className="skip-link">Skip to content</a>
-      {!reducedMotion && <Particles count={45} />}
-      {!reducedMotion && <CursorGlow />}
+      {!reducedMotion && <Particles count={hasFinePointer ? 45 : 20} />}
+      {!reducedMotion && hasFinePointer && <CursorGlow />}
       <ScrollProgress />
 
       {/* ===== NAV ===== */}
