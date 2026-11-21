@@ -99,6 +99,18 @@ function useCounter(end, duration = 2000, start = false, decimal = false) {
   return val;
 }
 
+function useMediaQuery(query) {
+  const [matches, setMatches] = useState(() => typeof window !== "undefined" && window.matchMedia(query).matches);
+  useEffect(() => {
+    const mq = window.matchMedia(query);
+    const onChange = () => setMatches(mq.matches);
+    onChange();
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, [query]);
+  return matches;
+}
+
 // ============ COMPONENTS ============
 function Particles({ count = 50 }) {
   const canvasRef = useRef(null);
@@ -450,6 +462,7 @@ export default function Portfolio() {
   const [activeNav, setActiveNav] = useState("home");
   const [projectFilter, setProjectFilter] = useState("all");
   const [skillsRef, skillsVis] = useInView(0.15);
+  const reducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
 
 
   useEffect(() => {
@@ -523,6 +536,10 @@ export default function Portfolio() {
         .hamburger { display: none; }
         .hero-grid { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 60px; max-width: 1100px; margin: 0 auto; width: 100%; }
         .hero-photo { display: flex; justify-content: center; }
+        @media (prefers-reduced-motion: reduce) {
+          html { scroll-behavior: auto; }
+          *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+        }
         @media (max-width: 768px) {
           .hamburger { display: flex; }
           .desktop-nav { display: none !important; }
@@ -535,8 +552,8 @@ export default function Portfolio() {
       `}</style>
 
       <a href="#main" className="skip-link">Skip to content</a>
-      <Particles count={45} />
-      <CursorGlow />
+      {!reducedMotion && <Particles count={45} />}
+      {!reducedMotion && <CursorGlow />}
       <ScrollProgress />
 
       {/* ===== NAV ===== */}
