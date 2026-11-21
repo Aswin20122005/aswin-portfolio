@@ -568,6 +568,8 @@ export default function Portfolio() {
         .skip-link { position: fixed; top: -60px; left: 16px; z-index: 300; background: #8b5cf6; color: #fff; padding: 10px 18px; border-radius: 10px; font-family: 'Outfit', sans-serif; font-size: 14px; text-decoration: none; transition: top 0.2s; }
         .skip-link:focus { top: 12px; }
         button:focus-visible, a:focus-visible { outline: 2px solid #06d6a0; outline-offset: 3px; }
+        .back-to-top { position: fixed; right: 24px; bottom: 24px; z-index: 90; width: 44px; height: 44px; border-radius: 14px; border: 1px solid rgba(139,92,246,0.3); background: rgba(6,6,17,0.8); backdrop-filter: blur(12px); color: #c4b5ff; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s; animation: fadeUp 0.4s ease-out; }
+        .back-to-top:hover { background: rgba(139,92,246,0.2); transform: translateY(-3px); }
         .hamburger { display: none; }
         .hero-grid { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 60px; max-width: 1100px; margin: 0 auto; width: 100%; }
         .hero-photo { display: flex; justify-content: center; }
@@ -825,6 +827,12 @@ export default function Portfolio() {
 
           </div>
         </AnimatedSection>
+
+        {scrolled && (
+          <button onClick={() => scrollTo("home")} aria-label="Back to top" className="back-to-top">
+            <ChevronDown size={20} style={{ transform: "rotate(180deg)" }} />
+          </button>
+        )}
 
         {/* ===== FOOTER ===== */}
         <footer style={{
