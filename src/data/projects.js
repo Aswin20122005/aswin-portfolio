@@ -131,4 +131,14 @@ export const PROJECTS = [
     color: "#2dd4bf",
     icon: "🏥",
   },
+  {
+    id: 15,
+    title: "DevOps CI/CD Pipeline Demo",
+    repo: "https://github.com/Aswin20122005/devops-webapp",
+    desc: "Static site shipped by a full GitHub Actions pipeline: HTML/Dockerfile/shell linting, a hardened non-root nginx container with strict CSP, automated smoke tests, Trivy vulnerability scanning, GHCR publishing and Slack alerts.",
+    tags: ["GitHub Actions", "Docker", "nginx", "Trivy", "Bash"],
+    cat: "web",
+    color: "#38bdf8",
+    icon: "🚀",
+  },
 ];
