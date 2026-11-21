@@ -4,6 +4,7 @@ import { CursorGlow } from "./components/CursorGlow";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { Particles } from "./components/Particles";
 import { ScrollProgress } from "./components/ScrollProgress";
+import { NAV_SECTIONS } from "./data/navigation";
 import { useMediaQuery } from "./hooks/useMediaQuery";
 import { About } from "./sections/About";
 import { Achievements } from "./sections/Achievements";
