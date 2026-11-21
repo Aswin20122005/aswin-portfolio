@@ -15,7 +15,10 @@ export function Typewriter({ words, speed = 100, pause = 2000 }) {
       delay = pause;
       next = () => setDeleting(true);
     } else if (deleting && charIdx === 0) {
-      next = () => { setDeleting(false); setWordIdx((i) => (i + 1) % words.length); };
+      next = () => {
+        setDeleting(false);
+        setWordIdx((i) => (i + 1) % words.length);
+      };
     } else {
       next = () => setCharIdx((c) => c + (deleting ? -1 : 1));
     }
@@ -27,7 +30,8 @@ export function Typewriter({ words, speed = 100, pause = 2000 }) {
     <span>
       <span className="sr-only">{words.join(", ")}</span>
       <span aria-hidden="true">
-        {text}<span style={{ animation: "blink 1s step-end infinite", color: "#8b5cf6", fontWeight: 300 }}>|</span>
+        {text}
+        <span style={{ animation: "blink 1s step-end infinite", color: "#8b5cf6", fontWeight: 300 }}>|</span>
       </span>
     </span>
   );

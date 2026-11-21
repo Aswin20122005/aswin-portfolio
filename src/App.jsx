@@ -33,10 +33,18 @@ export default function Portfolio() {
       setScrolled(window.scrollY > 60);
       for (const s of [...NAV_SECTIONS].reverse()) {
         const el = document.getElementById(s);
-        if (el && el.getBoundingClientRect().top < 300) { setActiveNav(s); break; }
+        if (el && el.getBoundingClientRect().top < 300) {
+          setActiveNav(s);
+          break;
+        }
       }
     };
-    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     update();
     return () => window.removeEventListener("scroll", onScroll);
@@ -47,19 +55,26 @@ export default function Portfolio() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
-
   const finishLoading = useCallback(() => setLoaded(true), []);
 
   if (!loaded) return <LoadingScreen onDone={finishLoading} />;
 
   return (
     <>
-      <a href="#main" className="skip-link">Skip to content</a>
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
       {!reducedMotion && <Particles count={hasFinePointer ? 45 : 20} />}
       {!reducedMotion && hasFinePointer && <CursorGlow />}
       <ScrollProgress />
 
-      <Navbar scrolled={scrolled} activeNav={activeNav} menuOpen={menuOpen} setMenuOpen={setMenuOpen} scrollTo={scrollTo} />
+      <Navbar
+        scrolled={scrolled}
+        activeNav={activeNav}
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+        scrollTo={scrollTo}
+      />
 
       <main id="main" style={{ position: "relative", zIndex: 2 }}>
         <Hero scrollTo={scrollTo} />

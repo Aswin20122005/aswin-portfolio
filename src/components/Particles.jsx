@@ -10,11 +10,14 @@ export function Particles({ count = 50 }) {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
-    let w = window.innerWidth, h = window.innerHeight;
+    let w = window.innerWidth,
+      h = window.innerHeight;
     const resize = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      w = window.innerWidth; h = window.innerHeight;
-      canvas.width = w * dpr; canvas.height = h * dpr;
+      w = window.innerWidth;
+      h = window.innerHeight;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
     resize();
@@ -29,16 +32,22 @@ export function Particles({ count = 50 }) {
       o: Math.random() * 0.5 + 0.1,
     }));
 
-    const onMouse = (e) => { mouse.current = { x: e.clientX, y: e.clientY }; };
+    const onMouse = (e) => {
+      mouse.current = { x: e.clientX, y: e.clientY };
+    };
     window.addEventListener("mousemove", onMouse);
 
     const draw = () => {
-      if (document.hidden) { raf.current = null; return; }
+      if (document.hidden) {
+        raf.current = null;
+        return;
+      }
       ctx.clearRect(0, 0, w, h);
       const ps = particles.current;
       for (let i = 0; i < ps.length; i++) {
         const p = ps[i];
-        p.x += p.vx; p.y += p.vy;
+        p.x += p.vx;
+        p.y += p.vy;
         if (p.x < 0 || p.x > w) p.vx *= -1;
         if (p.y < 0 || p.y > h) p.vy *= -1;
 
@@ -71,7 +80,9 @@ export function Particles({ count = 50 }) {
       }
       raf.current = requestAnimationFrame(draw);
     };
-    const onVisibility = () => { if (!document.hidden && raf.current === null) draw(); };
+    const onVisibility = () => {
+      if (!document.hidden && raf.current === null) draw();
+    };
     document.addEventListener("visibilitychange", onVisibility);
     draw();
     return () => {
@@ -82,5 +93,18 @@ export function Particles({ count = 50 }) {
     };
   }, [count]);
 
-  return <canvas ref={canvasRef} style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", zIndex: 0, pointerEvents: "none" }} />;
+  return (
+    <canvas
+      ref={canvasRef}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        zIndex: 0,
+        pointerEvents: "none",
+      }}
+    />
+  );
 }
