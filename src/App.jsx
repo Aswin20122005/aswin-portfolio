@@ -40,8 +40,8 @@ const SKILL_CATEGORIES = [
   { name: "Tools", icon: Terminal, skills: [{ n: "VS Code", l: 90 }, { n: "Power BI", l: 72 }, { n: "Postman", l: 70 }, { n: "MS Office", l: 85 }] },
 ];
 
-const CERTS = [ 
-  { title: "AWS Certified Cloud Practitioner certification", org: "AWS", color: "#44ef8b" },
+const CERTS = [
+  { title: "AWS Certified Cloud Practitioner", org: "AWS", color: "#44ef8b" },
   { title: "AWS Certified AI Practitioner", org: "AWS", color: "#44ef8b" },
   { title: "AWS Certified Developer – Associate", org: "AWS", color: "#44ef8b" },
   { title: "RHCSA", org: "Red Hat", id: "250-048-659", color: "#ef4444" },
