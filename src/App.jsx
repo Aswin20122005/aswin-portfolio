@@ -8,20 +8,9 @@ import { ROLES } from "./data/roles";
 import { SKILL_CATEGORIES } from "./data/skills";
 import { STATS } from "./data/stats";
 import { TIMELINE } from "./data/timeline";
+import { useInView } from "./hooks/useInView";
 
 // ============ HOOKS ============
-function useInView(threshold = 0.15) {
-  const ref = useRef(null);
-  const [vis, setVis] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVis(true); obs.disconnect(); } }, { threshold });
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
-  return [ref, vis];
-}
 
 function useCounter(end, duration = 2000, start = false, decimal = false) {
   const [val, setVal] = useState(0);
