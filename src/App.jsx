@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { ChevronDown, Download, Eye, Github, Instagram, Linkedin, Mail, MapPin, Menu, Phone, Send, X } from "lucide-react";
+import { ChevronDown, Download, Eye, Github, Instagram, Linkedin, Mail, Menu, Send, X } from "lucide-react";
 import { AnimatedSection } from "./components/AnimatedSection";
 import { CertItem } from "./components/CertItem";
 import { CursorGlow } from "./components/CursorGlow";
@@ -15,6 +15,7 @@ import { TimelineItem } from "./components/TimelineItem";
 import { Typewriter } from "./components/Typewriter";
 import { PROFILE_PHOTO, PROFILE_PHOTO_FALLBACK, RESUME_URL } from "./data/assets";
 import { CERTS } from "./data/certifications";
+import { CONTACT_INFO } from "./data/contact";
 import { PROJECTS } from "./data/projects";
 import { PUBLICATIONS } from "./data/publications";
 import { ROLES } from "./data/roles";
@@ -291,11 +292,7 @@ export default function Portfolio() {
                 Open to internships, collaborations, and research opportunities in Cloud, DevOps, Security, and ML. Let's connect!
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                {[
-                  { icon: Mail, label: "ashwin.20.achu@gmail.com", href: "mailto:ashwin.20.achu@gmail.com" },
-                  { icon: Phone, label: "+91 8667803689" },
-                  { icon: MapPin, label: "Chennai, India" },
-                ].map(item => (
+                {CONTACT_INFO.map(item => (
                   <div key={item.label} style={{ display: "flex", alignItems: "center", gap: 14 }}>
                     <div style={{ width: 40, height: 40, borderRadius: 12, background: "rgba(139,92,246,0.1)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                       <item.icon size={16} style={{ color: "#8b5cf6" }} />
