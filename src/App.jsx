@@ -583,10 +583,10 @@ export default function Portfolio() {
               </div>
 
               <div className="hero-socials" style={{ display: "flex", gap: 12, marginTop: 32 }}>
-                <a href="https://github.com/Aswin20122005" target="_blank" rel="noopener" className="social-link"><Github size={18} /></a>
-                <a href="https://www.linkedin.com/in/aswin-s-53abbb2a8" target="_blank" rel="noopener" className="social-link"><Linkedin size={18} /></a>
-                <a href="mailto:ashwin.20.achu@gmail.com" className="social-link"><Mail size={18} /></a>
-                <a href="https://www.instagram.com/__ashw1n.20_?igsh=MWs0b25hZm5sNjZuaA%3D%3D&utm_source=qr" target="_blank" rel="noopener" className="social-link"><Instagram size={18} /></a>
+                <a href="https://github.com/Aswin20122005" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub profile"><Github size={18} /></a>
+                <a href="https://www.linkedin.com/in/aswin-s-53abbb2a8" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn profile"><Linkedin size={18} /></a>
+                <a href="mailto:ashwin.20.achu@gmail.com" className="social-link" aria-label="Send an email"><Mail size={18} /></a>
+                <a href="https://www.instagram.com/__ashw1n.20_?igsh=MWs0b25hZm5sNjZuaA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram profile"><Instagram size={18} /></a>
               </div>
             </div>
 
@@ -753,10 +753,10 @@ export default function Portfolio() {
                 ))}
               </div>
               <div style={{ display: "flex", gap: 10, marginTop: 28 }}>
-                <a href="https://github.com/Aswin20122005" target="_blank" rel="noopener" className="social-link"><Github size={18} /></a>
-                <a href="https://www.linkedin.com/in/aswin-s-53abbb2a8" target="_blank" rel="noopener" className="social-link"><Linkedin size={18} /></a>
-                <a href="mailto:ashwin.20.achu@gmail.com" className="social-link"><Mail size={18} /></a>
-                <a href="https://www.instagram.com/__ashw1n.20_?igsh=MWs0b25hZm5sNjZuaA%3D%3D&utm_source=qr" target="_blank" rel="noopener" className="social-link"><Instagram size={18} /></a>
+                <a href="https://github.com/Aswin20122005" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub profile"><Github size={18} /></a>
+                <a href="https://www.linkedin.com/in/aswin-s-53abbb2a8" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn profile"><Linkedin size={18} /></a>
+                <a href="mailto:ashwin.20.achu@gmail.com" className="social-link" aria-label="Send an email"><Mail size={18} /></a>
+                <a href="https://www.instagram.com/__ashw1n.20_?igsh=MWs0b25hZm5sNjZuaA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram profile"><Instagram size={18} /></a>
               </div>
             </div>
 
