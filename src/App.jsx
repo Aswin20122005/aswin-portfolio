@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Github, Linkedin, Mail, Instagram, ExternalLink, Download, ChevronDown, Menu, X, Award, Briefcase, GraduationCap, Code, Database, Cloud, Brain, Terminal, Globe, Send, MapPin, Phone, Star, Eye } from "lucide-react";
 
 // ============ DATA ============
@@ -470,7 +470,7 @@ function PubItem({ pub, index }) {
 export default function Portfolio() {
   const [loaded, setLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
   const [activeNav, setActiveNav] = useState("home");
   const [projectFilter, setProjectFilter] = useState("all");
   const [skillsRef, skillsVis] = useInView(0.15);
@@ -478,23 +478,24 @@ export default function Portfolio() {
   const hasFinePointer = useMediaQuery("(hover: hover) and (pointer: fine)");
 
 
-  useEffect(() => {
-    const onScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
+  // One rAF-throttled scroll listener. Only boolean/section changes trigger a
+  // re-render, instead of re-rendering the whole page on every scroll event.
   useEffect(() => {
     const sections = ["home", "about", "skills", "projects", "achievements", "contact"];
-    const onScroll = () => {
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      setScrolled(window.scrollY > 60);
       for (const s of [...sections].reverse()) {
         const el = document.getElementById(s);
         if (el && el.getBoundingClientRect().top < 300) { setActiveNav(s); break; }
       }
     };
+    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
     window.addEventListener("scroll", onScroll, { passive: true });
+    update();
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [loaded]);
 
   // Lock page scroll while the mobile menu is open and let Escape close it
   useEffect(() => {
@@ -514,7 +515,9 @@ export default function Portfolio() {
   const filteredProjects = projectFilter === "all" ? PROJECTS : PROJECTS.filter(p => p.cat === projectFilter);
   const NAV = ["home", "about", "skills", "projects", "achievements", "contact"];
 
-  if (!loaded) return <LoadingScreen onDone={() => setLoaded(true)} />;
+  const finishLoading = useCallback(() => setLoaded(true), []);
+
+  if (!loaded) return <LoadingScreen onDone={finishLoading} />;
 
   return (
     <>
@@ -573,9 +576,9 @@ export default function Portfolio() {
       <nav style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, padding: "12px 28px",
         display: "flex", justifyContent: "space-between", alignItems: "center",
-        background: scrollY > 60 ? "rgba(6,6,17,0.85)" : "transparent",
-        backdropFilter: scrollY > 60 ? "blur(20px)" : "none",
-        borderBottom: scrollY > 60 ? "1px solid rgba(139,92,246,0.08)" : "none",
+        background: scrolled ? "rgba(6,6,17,0.85)" : "transparent",
+        backdropFilter: scrolled ? "blur(20px)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(139,92,246,0.08)" : "none",
         transition: "all 0.3s",
       }}>
         <div onClick={() => scrollTo("home")} style={{ cursor: "pointer", fontFamily: "'Syne', sans-serif", fontSize: 20, fontWeight: 800 }}>
