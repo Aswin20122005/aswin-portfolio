@@ -3,24 +3,21 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { AnimatedSection } from "./components/AnimatedSection";
 import { CertItem } from "./components/CertItem";
 import { CursorGlow } from "./components/CursorGlow";
-import { GlassCard } from "./components/GlassCard";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { Particles } from "./components/Particles";
 import { ProjectCard } from "./components/ProjectCard";
 import { PubItem } from "./components/PubItem";
 import { ScrollProgress } from "./components/ScrollProgress";
-import { SkillBar } from "./components/SkillBar";
 import { SocialLinks } from "./components/SocialLinks";
 import { CERTS } from "./data/certifications";
 import { CONTACT_INFO } from "./data/contact";
 import { NAV_SECTIONS } from "./data/navigation";
 import { PROJECTS } from "./data/projects";
 import { PUBLICATIONS } from "./data/publications";
-import { SKILL_CATEGORIES } from "./data/skills";
-import { useInView } from "./hooks/useInView";
 import { useMediaQuery } from "./hooks/useMediaQuery";
 import { About } from "./sections/About";
 import { Hero } from "./sections/Hero";
+import { Skills } from "./sections/Skills";
 
 // ============ MAIN COMPONENT ============
 export default function Portfolio() {
@@ -29,7 +26,6 @@ export default function Portfolio() {
   const [scrolled, setScrolled] = useState(false);
   const [activeNav, setActiveNav] = useState("home");
   const [projectFilter, setProjectFilter] = useState("all");
-  const [skillsRef, skillsVis] = useInView(0.15);
   const reducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
   const hasFinePointer = useMediaQuery("(hover: hover) and (pointer: fine)");
 
@@ -112,30 +108,7 @@ export default function Portfolio() {
 
         <About />
 
-        {/* ===== SKILLS ===== */}
-        <AnimatedSection id="skills" style={{ padding: "100px 32px", maxWidth: 1100, margin: "0 auto" }}>
-          <div className="section-tag">Technical Skills</div>
-          <h2 className="section-heading">My tech<br /><span style={{ color: "#06d6a0" }}>toolbox.</span></h2>
-          <p className="section-sub" style={{ marginBottom: 40 }}>Languages, frameworks, and tools I work with across development, cloud, and AI.</p>
-          <div ref={skillsRef} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20 }}>
-            {SKILL_CATEGORIES.map((cat, ci) => {
-              const Icon = cat.icon;
-              return (
-                <GlassCard key={cat.name} style={{ padding: "24px 22px" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
-                    <div style={{ width: 36, height: 36, borderRadius: 10, background: "rgba(139,92,246,0.12)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      <Icon size={18} style={{ color: "#8b5cf6" }} />
-                    </div>
-                    <span style={{ fontFamily: "'Syne', sans-serif", fontSize: 15, fontWeight: 700, color: "#f0e6ff" }}>{cat.name}</span>
-                  </div>
-                  {cat.skills.map((s, si) => (
-                    <SkillBar key={s.n} name={s.n} level={s.l} delay={ci * 0.15 + si * 0.08} visible={skillsVis} />
-                  ))}
-                </GlassCard>
-              );
-            })}
-          </div>
-        </AnimatedSection>
+        <Skills />
 
         {/* ===== PROJECTS ===== */}
         <AnimatedSection id="projects" style={{ padding: "100px 32px", maxWidth: 1100, margin: "0 auto" }}>
