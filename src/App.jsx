@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { Award, Briefcase, ChevronDown, Cloud, Download, ExternalLink, Eye, Github, GraduationCap, Instagram, Linkedin, Mail, MapPin, Menu, Phone, Send, Star, X } from "lucide-react";
+import { AnimatedSection } from "./components/AnimatedSection";
 import { CursorGlow } from "./components/CursorGlow";
 import { GlassCard } from "./components/GlassCard";
 import { LoadingScreen } from "./components/LoadingScreen";
@@ -19,20 +20,6 @@ import { useInView } from "./hooks/useInView";
 import { useMediaQuery } from "./hooks/useMediaQuery";
 
 // ============ COMPONENTS ============
-
-function AnimatedSection({ children, id, style }) {
-  const [ref, vis] = useInView(0.1);
-  return (
-    <section id={id} ref={ref} style={{
-      opacity: vis ? 1 : 0,
-      transform: vis ? "translateY(0)" : "translateY(50px)",
-      transition: "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-      ...style,
-    }}>
-      {children}
-    </section>
-  );
-}
 
 function SkillBar({ name, level, delay, visible }) {
   return (
