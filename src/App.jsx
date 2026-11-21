@@ -823,7 +823,7 @@ export default function Portfolio() {
           borderTop: "1px solid rgba(139,92,246,0.08)",
           fontFamily: "'Outfit', sans-serif", fontSize: 13, color: "#3d3660",
         }}>
-          <span style={{ color: "#8b5cf6" }}>{"<"}</span> Built by Aswin <span style={{ color: "#06d6a0" }}>{"/>"}</span> · © 2026
+          <span style={{ color: "#8b5cf6" }}>{"<"}</span> Built by Aswin <span style={{ color: "#06d6a0" }}>{"/>"}</span> · © {new Date().getFullYear()}
         </footer>
       </main>
     </>
