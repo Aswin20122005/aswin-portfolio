@@ -1,17 +1,9 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Award, Brain, Briefcase, ChevronDown, Cloud, Code, Database, Download, ExternalLink, Eye, Github, Globe, GraduationCap, Instagram, Linkedin, Mail, MapPin, Menu, Phone, Send, Star, Terminal, X } from "lucide-react";
 import { PROFILE_PHOTO, PROFILE_PHOTO_FALLBACK, RESUME_URL } from "./data/assets";
+import { ROLES } from "./data/roles";
 
 // ============ DATA ============
-
-const ROLES = [
-  "Cloud & DevOps Enthusiast",
-  "Security Analyst",
-  "ML & IoT Developer",
-  "Data Analytics Explorer",
-  "Full Stack Developer",
-  "Published Researcher"
-];
 
 const PROJECTS = [
   { id: 1, title: "IoT Anti-Snoring & Bruxism System", desc: "Real-time sleep monitoring using ESP32 with multimodal sensing, BLE alerts, and threshold-based signal processing for acoustic/vibration pattern detection.", tags: ["ESP32", "C/C++", "Arduino", "BLE"], cat: "iot", color: "#06d6a0", icon: "😴" },
