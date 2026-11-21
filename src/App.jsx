@@ -1,24 +1,12 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Award, Briefcase, ChevronDown, Cloud, Download, ExternalLink, Eye, Github, GraduationCap, Instagram, Linkedin, Mail, MapPin, Menu, Phone, Send, Star, X } from "lucide-react";
 import { PROFILE_PHOTO, PROFILE_PHOTO_FALLBACK, RESUME_URL } from "./data/assets";
+import { CERTS } from "./data/certifications";
 import { PROJECTS } from "./data/projects";
 import { ROLES } from "./data/roles";
 import { SKILL_CATEGORIES } from "./data/skills";
 
 // ============ DATA ============
-
-const CERTS = [
-  { title: "AWS Certified Cloud Practitioner", org: "AWS", color: "#44ef8b" },
-  { title: "AWS Certified AI Practitioner", org: "AWS", color: "#44ef8b" },
-  { title: "AWS Certified Developer – Associate", org: "AWS", color: "#44ef8b" },
-  { title: "RHCSA", org: "Red Hat", id: "250-048-659", color: "#ef4444" },
-  { title: "SAP Certified Data Analyst", org: "SAP Analytics Cloud", color: "#3b82f6" },
-  { title: "Intro to Machine Learning", org: "NPTEL", color: "#8b5cf6" },
-  { title: "Networking & Config", org: "Cisco", color: "#06b6d4" },
-  { title: "DL & ML Onramp", org: "MathWorks", color: "#f97316" },
-  { title: "Data Analyst Bootcamp", org: "Udemy", color: "#a855f7" },
-  { title: "Full-Stack Web Dev", org: "Udemy", color: "#a855f7" },
-];
 
 const PUBLICATIONS = [
   { title: "VoiSOS: Voice-based SOS System Using Flutter", pub: "Springer · DoSCI-2025", desc: "Voice-activated emergency alert system — IET Lucknow, University of Delhi, University of Calabria, Italy.", color: "#ef4444" },
