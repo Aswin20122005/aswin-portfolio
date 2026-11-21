@@ -6,16 +6,8 @@ import { PROJECTS } from "./data/projects";
 import { PUBLICATIONS } from "./data/publications";
 import { ROLES } from "./data/roles";
 import { SKILL_CATEGORIES } from "./data/skills";
+import { STATS } from "./data/stats";
 import { TIMELINE } from "./data/timeline";
-
-// ============ DATA ============
-
-const STATS = [
-  { label: "Projects Built", value: PROJECTS.length, suffix: "+" },
-  { label: "Publications", value: PUBLICATIONS.length, suffix: "" },
-  { label: "Certifications", value: CERTS.length, suffix: "" },
-  { label: "CGPA", value: 8.72, suffix: "", decimal: true },
-];
 
 // ============ HOOKS ============
 function useInView(threshold = 0.15) {
