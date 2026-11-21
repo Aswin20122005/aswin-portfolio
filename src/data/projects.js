@@ -95,8 +95,9 @@ export const PROJECTS = [
   {
     id: 11,
     title: "Student Attendance via Face Recognition",
-    desc: "Automated attendance system using face recognition to identify students in real-time, logging attendance with timestamps.",
-    tags: ["Python", "OpenCV", "face_recognition", "SQL"],
+    repo: "https://github.com/Aswin20122005/face-recognition-attendance",
+    desc: "Automated attendance replacing manual roll-call: OpenCV detects and recognises students in real time (webcam or classroom photo), marks them in a SQL database after multi-frame confirmation, and a REST API and dashboard provide records and CSV reports.",
+    tags: ["Python", "OpenCV", "SQL", "FastAPI", "Docker"],
     cat: "ml",
     color: "#34d399",
     icon: "📸",
