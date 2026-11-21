@@ -122,13 +122,19 @@ function Particles({ count = 50 }) {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
-    const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; };
+    let w = window.innerWidth, h = window.innerHeight;
+    const resize = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = window.innerWidth; h = window.innerHeight;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
     resize();
     window.addEventListener("resize", resize);
 
     particles.current = Array.from({ length: count }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
+      x: Math.random() * w,
+      y: Math.random() * h,
       vx: (Math.random() - 0.5) * 0.4,
       vy: (Math.random() - 0.5) * 0.4,
       r: Math.random() * 2 + 0.5,
@@ -140,13 +146,13 @@ function Particles({ count = 50 }) {
 
     const draw = () => {
       if (document.hidden) { raf.current = null; return; }
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, w, h);
       const ps = particles.current;
       for (let i = 0; i < ps.length; i++) {
         const p = ps[i];
         p.x += p.vx; p.y += p.vy;
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+        if (p.x < 0 || p.x > w) p.vx *= -1;
+        if (p.y < 0 || p.y > h) p.vy *= -1;
 
         const dx = mouse.current.x - p.x;
         const dy = mouse.current.y - p.y;
