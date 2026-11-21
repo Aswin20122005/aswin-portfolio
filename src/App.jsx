@@ -139,6 +139,7 @@ function Particles({ count = 50 }) {
     window.addEventListener("mousemove", onMouse);
 
     const draw = () => {
+      if (document.hidden) { raf.current = null; return; }
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const ps = particles.current;
       for (let i = 0; i < ps.length; i++) {
@@ -176,9 +177,12 @@ function Particles({ count = 50 }) {
       }
       raf.current = requestAnimationFrame(draw);
     };
+    const onVisibility = () => { if (!document.hidden && raf.current === null) draw(); };
+    document.addEventListener("visibilitychange", onVisibility);
     draw();
     return () => {
       cancelAnimationFrame(raf.current);
+      document.removeEventListener("visibilitychange", onVisibility);
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", onMouse);
     };
