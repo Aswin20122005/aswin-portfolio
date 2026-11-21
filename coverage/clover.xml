@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1795251189176" clover="3.2.0">
+  <project timestamp="1795251189176" name="All files">
+    <metrics statements="273" coveredstatements="243" conditionals="166" coveredconditionals="124" methods="100" coveredmethods="83" elements="539" coveredelements="450" complexity="0" loc="273" ncloc="273" packages="5" files="37" classes="37"/>
+    <package name="src">
+      <metrics statements="30" coveredstatements="24" conditionals="15" coveredconditionals="11" methods="8" coveredmethods="5"/>
+      <file name="App.jsx" path="/home/claude/aswin-portfolio/src/App.jsx">
+        <metrics statements="30" coveredstatements="24" conditionals="15" coveredconditionals="11" methods="8" coveredmethods="5"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="35" count="7" type="stmt"/>
+        <line num="36" count="7" type="cond" truecount="4" falsecount="0"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="43" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="48" count="2" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="50" count="2" type="stmt"/>
+        <line num="53" count="3" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="58" count="3" type="stmt"/>
+        <line num="60" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="62" count="2" type="stmt"/>
+        <line num="94" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components">
+      <metrics statements="156" coveredstatements="134" conditionals="109" coveredconditionals="80" methods="49" coveredmethods="38"/>
+      <file name="AnimatedSection.jsx" path="/home/claude/aswin-portfolio/src/components/AnimatedSection.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="4" count="39" type="stmt"/>
+        <line num="5" count="39" type="stmt"/>
+      </file>
+      <file name="BackToTop.jsx" path="/home/claude/aswin-portfolio/src/components/BackToTop.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="4" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+      <file name="CertItem.jsx" path="/home/claude/aswin-portfolio/src/components/CertItem.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+        <line num="6" count="60" type="stmt"/>
+        <line num="7" count="60" type="stmt"/>
+      </file>
+      <file name="CursorGlow.jsx" path="/home/claude/aswin-portfolio/src/components/CursorGlow.jsx">
+        <metrics statements="9" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+      </file>
+      <file name="GlassCard.jsx" path="/home/claude/aswin-portfolio/src/components/GlassCard.jsx">
+        <metrics statements="4" coveredstatements="2" conditionals="14" coveredconditionals="6" methods="3" coveredmethods="1"/>
+        <line num="4" count="200" type="stmt"/>
+        <line num="5" count="200" type="stmt"/>
+        <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
+      </file>
+      <file name="LoadingScreen.jsx" path="/home/claude/aswin-portfolio/src/components/LoadingScreen.jsx">
+        <metrics statements="16" coveredstatements="16" conditionals="8" coveredconditionals="8" methods="8" coveredmethods="8"/>
+        <line num="4" count="42" type="stmt"/>
+        <line num="5" count="42" type="stmt"/>
+        <line num="7" count="42" type="stmt"/>
+        <line num="9" count="42" type="stmt"/>
+        <line num="10" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="12" count="36" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="18" count="42" type="stmt"/>
+        <line num="19" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="28" count="42" type="stmt"/>
+      </file>
+      <file name="Particles.jsx" path="/home/claude/aswin-portfolio/src/components/Particles.jsx">
+        <metrics statements="67" coveredstatements="61" conditionals="23" coveredconditionals="13" methods="8" coveredmethods="6"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="26" count="20" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="260" type="cond" truecount="1" falsecount="1"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="45" count="260" type="stmt"/>
+        <line num="46" count="260" type="stmt"/>
+        <line num="47" count="260" type="stmt"/>
+        <line num="48" count="5200" type="stmt"/>
+        <line num="49" count="5200" type="stmt"/>
+        <line num="50" count="5200" type="stmt"/>
+        <line num="51" count="5200" type="cond" truecount="3" falsecount="1"/>
+        <line num="52" count="5200" type="cond" truecount="4" falsecount="0"/>
+        <line num="54" count="5200" type="stmt"/>
+        <line num="55" count="5200" type="stmt"/>
+        <line num="56" count="5200" type="stmt"/>
+        <line num="57" count="5200" type="cond" truecount="1" falsecount="1"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="62" count="5200" type="stmt"/>
+        <line num="63" count="5200" type="stmt"/>
+        <line num="64" count="5200" type="stmt"/>
+        <line num="65" count="5200" type="stmt"/>
+        <line num="67" count="5200" type="stmt"/>
+        <line num="68" count="49400" type="stmt"/>
+        <line num="69" count="49400" type="stmt"/>
+        <line num="70" count="49400" type="stmt"/>
+        <line num="71" count="49400" type="cond" truecount="2" falsecount="0"/>
+        <line num="72" count="1386" type="stmt"/>
+        <line num="73" count="1386" type="stmt"/>
+        <line num="74" count="1386" type="stmt"/>
+        <line num="75" count="1386" type="stmt"/>
+        <line num="76" count="1386" type="stmt"/>
+        <line num="77" count="1386" type="stmt"/>
+        <line num="81" count="260" type="stmt"/>
+        <line num="83" count="1" type="stmt"/>
+        <line num="84" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="87" count="1" type="stmt"/>
+        <line num="88" count="1" type="stmt"/>
+        <line num="89" count="1" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="91" count="1" type="stmt"/>
+        <line num="92" count="1" type="stmt"/>
+        <line num="96" count="2" type="stmt"/>
+      </file>
+      <file name="ProjectCard.jsx" path="/home/claude/aswin-portfolio/src/components/ProjectCard.jsx">
+        <metrics statements="6" coveredstatements="4" conditionals="16" coveredconditionals="11" methods="4" coveredmethods="2"/>
+        <line num="6" count="214" type="stmt"/>
+        <line num="7" count="214" type="stmt"/>
+        <line num="8" count="214" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="68" count="889" type="stmt"/>
+      </file>
+      <file name="PubItem.jsx" path="/home/claude/aswin-portfolio/src/components/PubItem.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="6" count="12" type="stmt"/>
+      </file>
+      <file name="ScrollProgress.jsx" path="/home/claude/aswin-portfolio/src/components/ScrollProgress.jsx">
+        <metrics statements="18" coveredstatements="15" conditionals="6" coveredconditionals="2" methods="5" coveredmethods="4"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="cond" truecount="2" falsecount="2"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+      </file>
+      <file name="SkillBar.jsx" path="/home/claude/aswin-portfolio/src/components/SkillBar.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="2" count="92" type="stmt"/>
+      </file>
+      <file name="SocialLinks.jsx" path="/home/claude/aswin-portfolio/src/components/SocialLinks.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="4" count="13" type="stmt"/>
+        <line num="7" count="52" type="stmt"/>
+      </file>
+      <file name="StatBox.jsx" path="/home/claude/aswin-portfolio/src/components/StatBox.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="93" type="stmt"/>
+        <line num="7" count="93" type="stmt"/>
+        <line num="8" count="93" type="stmt"/>
+      </file>
+      <file name="TimelineItem.jsx" path="/home/claude/aswin-portfolio/src/components/TimelineItem.jsx">
+        <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="6" count="30" type="stmt"/>
+        <line num="7" count="30" type="stmt"/>
+        <line num="8" count="30" type="stmt"/>
+        <line num="9" count="30" type="stmt"/>
+      </file>
+      <file name="Typewriter.jsx" path="/home/claude/aswin-portfolio/src/components/Typewriter.jsx">
+        <metrics statements="18" coveredstatements="18" conditionals="14" coveredconditionals="14" methods="8" coveredmethods="8"/>
+        <line num="4" count="44" type="stmt"/>
+        <line num="5" count="44" type="stmt"/>
+        <line num="6" count="44" type="stmt"/>
+        <line num="7" count="44" type="stmt"/>
+        <line num="8" count="44" type="stmt"/>
+        <line num="10" count="44" type="stmt"/>
+        <line num="11" count="43" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="43" type="cond" truecount="4" falsecount="0"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="40" type="cond" truecount="4" falsecount="0"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="23" count="39" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="43" type="stmt"/>
+        <line num="26" count="43" type="stmt"/>
+        <line num="29" count="44" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.data">
+      <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="assets.js" path="/home/claude/aswin-portfolio/src/data/assets.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+      </file>
+      <file name="certifications.js" path="/home/claude/aswin-portfolio/src/data/certifications.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="5" type="stmt"/>
+      </file>
+      <file name="contact.js" path="/home/claude/aswin-portfolio/src/data/contact.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
+      </file>
+      <file name="navigation.js" path="/home/claude/aswin-portfolio/src/data/navigation.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="3" type="stmt"/>
+      </file>
+      <file name="projects.js" path="/home/claude/aswin-portfolio/src/data/projects.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="5" type="stmt"/>
+      </file>
+      <file name="publications.js" path="/home/claude/aswin-portfolio/src/data/publications.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="5" type="stmt"/>
+      </file>
+      <file name="roles.js" path="/home/claude/aswin-portfolio/src/data/roles.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+      </file>
+      <file name="skills.js" path="/home/claude/aswin-portfolio/src/data/skills.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="3" type="stmt"/>
+      </file>
+      <file name="stats.js" path="/home/claude/aswin-portfolio/src/data/stats.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="5" count="3" type="stmt"/>
+      </file>
+      <file name="timeline.js" path="/home/claude/aswin-portfolio/src/data/timeline.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.hooks">
+      <metrics statements="33" coveredstatements="33" conditionals="18" coveredconditionals="13" methods="12" coveredmethods="12"/>
+      <file name="useCounter.js" path="/home/claude/aswin-portfolio/src/hooks/useCounter.js">
+        <metrics statements="12" coveredstatements="12" conditionals="11" coveredconditionals="9" methods="3" coveredmethods="3"/>
+        <line num="4" count="99" type="stmt"/>
+        <line num="5" count="99" type="stmt"/>
+        <line num="6" count="27" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="8" count="14" type="stmt"/>
+        <line num="9" count="509" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="509" type="stmt"/>
+        <line num="11" count="509" type="stmt"/>
+        <line num="12" count="509" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="509" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="14" type="stmt"/>
+        <line num="17" count="99" type="stmt"/>
+      </file>
+      <file name="useInView.js" path="/home/claude/aswin-portfolio/src/hooks/useInView.js">
+        <metrics statements="12" coveredstatements="12" conditionals="5" coveredconditionals="2" methods="4" coveredmethods="4"/>
+        <line num="4" count="455" type="stmt"/>
+        <line num="5" count="455" type="stmt"/>
+        <line num="6" count="455" type="stmt"/>
+        <line num="7" count="184" type="stmt"/>
+        <line num="8" count="184" type="cond" truecount="1" falsecount="1"/>
+        <line num="9" count="184" type="stmt"/>
+        <line num="11" count="183" type="cond" truecount="1" falsecount="1"/>
+        <line num="12" count="183" type="stmt"/>
+        <line num="13" count="183" type="stmt"/>
+        <line num="18" count="184" type="stmt"/>
+        <line num="19" count="184" type="stmt"/>
+        <line num="21" count="455" type="stmt"/>
+      </file>
+      <file name="useMediaQuery.js" path="/home/claude/aswin-portfolio/src/hooks/useMediaQuery.js">
+        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="5"/>
+        <line num="4" count="10" type="stmt"/>
+        <line num="5" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="10" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="14" count="10" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.sections">
+      <metrics statements="40" coveredstatements="38" conditionals="24" coveredconditionals="20" methods="31" coveredmethods="28"/>
+      <file name="About.jsx" path="/home/claude/aswin-portfolio/src/sections/About.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="44" count="16" type="stmt"/>
+        <line num="74" count="20" type="stmt"/>
+      </file>
+      <file name="Achievements.jsx" path="/home/claude/aswin-portfolio/src/sections/Achievements.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="24" count="40" type="stmt"/>
+        <line num="42" count="8" type="stmt"/>
+      </file>
+      <file name="Contact.jsx" path="/home/claude/aswin-portfolio/src/sections/Contact.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="22" count="12" type="stmt"/>
+      </file>
+      <file name="Footer.jsx" path="/home/claude/aswin-portfolio/src/sections/Footer.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="3" type="stmt"/>
+      </file>
+      <file name="Hero.jsx" path="/home/claude/aswin-portfolio/src/sections/Hero.jsx">
+        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="121" count="1" type="stmt"/>
+        <line num="124" count="1" type="stmt"/>
+        <line num="233" count="0" type="stmt"/>
+      </file>
+      <file name="Navbar.jsx" path="/home/claude/aswin-portfolio/src/sections/Navbar.jsx">
+        <metrics statements="16" coveredstatements="15" conditionals="18" coveredconditionals="14" methods="10" coveredmethods="8"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="8" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="21" count="8" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="50" count="48" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="94" count="6" type="stmt"/>
+      </file>
+      <file name="Projects.jsx" path="/home/claude/aswin-portfolio/src/sections/Projects.jsx">
+        <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="5"/>
+        <line num="7" count="13" type="stmt"/>
+        <line num="9" count="56" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="12" type="stmt"/>
+        <line num="28" count="72" type="stmt"/>
+        <line num="31" count="5" type="stmt"/>
+        <line num="40" count="125" type="stmt"/>
+      </file>
+      <file name="Skills.jsx" path="/home/claude/aswin-portfolio/src/sections/Skills.jsx">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="26" count="24" type="stmt"/>
+        <line num="27" count="24" type="stmt"/>
+        <line num="55" count="92" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
