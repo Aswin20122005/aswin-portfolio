@@ -226,33 +226,27 @@ function ScrollProgress() {
 }
 
 function Typewriter({ words, speed = 100, pause = 2000 }) {
-  const [text, setText] = useState("");
   const [wordIdx, setWordIdx] = useState(0);
   const [charIdx, setCharIdx] = useState(0);
   const [deleting, setDeleting] = useState(false);
+  const word = words[wordIdx];
+  const text = word.substring(0, charIdx);
 
   useEffect(() => {
-    const word = words[wordIdx];
-    const timeout = setTimeout(() => {
-      if (!deleting) {
-        setText(word.substring(0, charIdx + 1));
-        if (charIdx + 1 === word.length) {
-          setTimeout(() => setDeleting(true), pause);
-        } else {
-          setCharIdx(charIdx + 1);
-        }
-      } else {
-        setText(word.substring(0, charIdx));
-        if (charIdx === 0) {
-          setDeleting(false);
-          setWordIdx((wordIdx + 1) % words.length);
-        } else {
-          setCharIdx(charIdx - 1);
-        }
-      }
-    }, deleting ? speed / 2 : speed);
-    return () => clearTimeout(timeout);
-  }, [charIdx, deleting, wordIdx, words, speed, pause]);
+    let delay = deleting ? speed / 2 : speed;
+    let next;
+    if (!deleting && charIdx === word.length) {
+      // finished typing: wait, then start deleting
+      delay = pause;
+      next = () => setDeleting(true);
+    } else if (deleting && charIdx === 0) {
+      next = () => { setDeleting(false); setWordIdx((i) => (i + 1) % words.length); };
+    } else {
+      next = () => setCharIdx((c) => c + (deleting ? -1 : 1));
+    }
+    const t = setTimeout(next, delay);
+    return () => clearTimeout(t);
+  }, [charIdx, deleting, word, words.length, speed, pause]);
 
   return (
     <span>
